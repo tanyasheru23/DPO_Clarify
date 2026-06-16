@@ -1,12 +1,12 @@
-from config import MIN_ANSWER_LENGTH, MIN_SCORE_GAP
-from datasets import load_dataset, Dataset
+from config import MIN_ANSWER_LENGTH
+from datasets import load_dataset
 
 def build_eli5_pairs(target: int) -> list[dict]:
     """
     ELI5: every question has multiple answers with upvote scores.
     Chosen = highest scored answer, Rejected = lowest scored.
     """
-    print(f"\n[2/3] Loading ELI5 dataset...")
+    print("\n[2/3] Loading ELI5 dataset...")
     ds = load_dataset("dany0407/eli5_category", split="train")
 
     pairs = []
