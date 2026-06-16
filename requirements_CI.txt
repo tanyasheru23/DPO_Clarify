@@ -5,3 +5,4 @@ huggingface-hub==1.19.0
 
 pytest==8.4.2
 pytest-cov==6.2.1
+pytest-pythonpath
