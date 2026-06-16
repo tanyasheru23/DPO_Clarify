@@ -1,5 +1,5 @@
-from config import DATA_DIR, OUTPUT_HF_DIR, OUTPUT_JSONL, MIN_ANSWER_LENGTH, MIN_SCORE_GAP
-from datasets import load_dataset, Dataset
+from config import OUTPUT_HF_DIR, OUTPUT_JSONL, MIN_ANSWER_LENGTH
+from datasets import Dataset
 import random
 import json
 
@@ -64,6 +64,6 @@ def save_dataset(pairs: list[dict]):
     # Source breakdown
     from collections import Counter
     sources = Counter(p.get("source") for p in valid)
-    print(f"\nSource breakdown:")
+    print("\nSource breakdown:")
     for src, count in sources.items():
         print(f"{src:15s} {count}")
