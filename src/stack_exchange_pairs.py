@@ -1,6 +1,6 @@
 from config import MIN_ANSWER_LENGTH, MIN_SCORE_GAP
 from src.utils import is_relevant, clean_html
-from datasets import load_dataset, Dataset
+from datasets import load_dataset
 
 def build_stackexchange_pairs(target: int) -> list[dict]:
     """
@@ -8,7 +8,7 @@ def build_stackexchange_pairs(target: int) -> list[dict]:
     Each row has a question + list of answers with scores.
     We sort answers by score and take top as chosen, bottom as rejected.
     """
-    print(f"\n[1/3] Loading StackExchange dataset...")
+    print("\n[1/3] Loading StackExchange dataset...")
     ds = load_dataset(
         "HuggingFaceH4/stack-exchange-preferences",
         split="train",
