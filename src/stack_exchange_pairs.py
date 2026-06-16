@@ -2,6 +2,7 @@ from config import MIN_ANSWER_LENGTH, MIN_SCORE_GAP
 from src.utils import is_relevant, clean_html
 from datasets import load_dataset
 
+
 def build_stackexchange_pairs(target: int) -> list[dict]:
     """
     Load HuggingFaceH4/stack-exchange-preferences.
@@ -35,11 +36,13 @@ def build_stackexchange_pairs(target: int) -> list[dict]:
             continue
 
         # Sort by score descending
-        answers_sorted = sorted(answers, key=lambda x: x.get("pm_score", 0), reverse=True)
-        best   = answers_sorted[0]
-        worst  = answers_sorted[-1]
+        answers_sorted = sorted(
+            answers, key=lambda x: x.get("pm_score", 0), reverse=True
+        )
+        best = answers_sorted[0]
+        worst = answers_sorted[-1]
 
-        best_score  = best.get("pm_score", 0)
+        best_score = best.get("pm_score", 0)
         worst_score = worst.get("pm_score", 0)
 
         # Quality gates
@@ -47,25 +50,30 @@ def build_stackexchange_pairs(target: int) -> list[dict]:
             skipped += 1
             continue
 
-        chosen_text   = clean_html(best.get("text", ""))
+        chosen_text = clean_html(best.get("text", ""))
         rejected_text = clean_html(worst.get("text", ""))
 
-        if len(chosen_text) < MIN_ANSWER_LENGTH or len(rejected_text) < MIN_ANSWER_LENGTH:
+        if (
+            len(chosen_text) < MIN_ANSWER_LENGTH
+            or len(rejected_text) < MIN_ANSWER_LENGTH
+        ):
             skipped += 1
             continue
 
         # Build the prompt from the question title + body
         question_title = row.get("title", "").strip()
-        question_body  = clean_html(row.get("question", ""))[:400]
+        question_body = clean_html(row.get("question", ""))[:400]
         prompt = f"{question_title}\n\n{question_body}".strip()
 
-        pairs.append({
-            "prompt":   prompt,
-            "chosen":   chosen_text,
-            "rejected": rejected_text,
-            "source":   "stackexchange",
-            "score_gap": best_score - worst_score
-        })
+        pairs.append(
+            {
+                "prompt": prompt,
+                "chosen": chosen_text,
+                "rejected": rejected_text,
+                "source": "stackexchange",
+                "score_gap": best_score - worst_score,
+            }
+        )
         print(f"pairs: {len(pairs)}")
 
     print(f"{len(pairs)} SE pairs built  (skipped {skipped})")

@@ -89,6 +89,7 @@ Return ONLY valid JSON:
   "concept": "..."
 }}"""
 
+
 def generate_synthetic_pair(retries: int = 3) -> dict | None:
     """Call OpenAI to generate one chosen/rejected pair for a concept."""
     for attempt in range(retries):
@@ -98,18 +99,19 @@ def generate_synthetic_pair(retries: int = 3) -> dict | None:
                 max_tokens=1000,
                 messages=[
                     {"role": "system", "content": SYNTH_SYSTEM_PROMPT},
-                    {"role": "user",   "content": "Generate one QnA preference pair"}
+                    {"role": "user", "content": "Generate one QnA preference pair"},
                 ],
-                response_format={"type": "json_object"}  # enforces JSON output
+                response_format={"type": "json_object"},  # enforces JSON output
             )
             raw = response.choices[0].message.content.strip()
             pair = json.loads(raw)
             pair["source"] = "synthetic"
             return pair
         except (json.JSONDecodeError, Exception) as e:
-            print(f"!!! Attempt {attempt+1} failed: {e}")
+            print(f"!!! Attempt {attempt + 1} failed: {e}")
             time.sleep(2)
     return None
+
 
 def build_synthetic_pairs(target: int) -> list[dict]:
     """Generate synthetic pairs across all concepts, cycling if needed."""
@@ -139,7 +141,9 @@ def build_synthetic_pairs(target: int) -> list[dict]:
         if pair and pair.get("concept", "").lower() not in seen_concepts:
             seen_concepts.add(pair["concept"])
             pairs.append(pair)
-            print(f"[{len(pairs)}/{target}] || {pair.get('concept', 'unknown')} || {pair.get('prompt')}")
+            print(
+                f"[{len(pairs)}/{target}] || {pair.get('concept', 'unknown')} || {pair.get('prompt')}"
+            )
         time.sleep(0.5)
 
     print(f"{len(pairs)} synthetic pairs generated")
