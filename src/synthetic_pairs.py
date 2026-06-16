@@ -98,7 +98,7 @@ def generate_synthetic_pair(retries: int = 3) -> dict | None:
                 max_tokens=1000,
                 messages=[
                     {"role": "system", "content": SYNTH_SYSTEM_PROMPT},
-                    {"role": "user",   "content": f"Generate one QnA preference pair"}
+                    {"role": "user",   "content": "Generate one QnA preference pair"}
                 ],
                 response_format={"type": "json_object"}  # enforces JSON output
             )
