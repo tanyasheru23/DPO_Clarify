@@ -1,5 +1,4 @@
 import os
-import random
 import json
 import time
 from config import OPENAI_MODEL
@@ -114,7 +113,7 @@ def generate_synthetic_pair(retries: int = 3) -> dict | None:
 
 def build_synthetic_pairs(target: int) -> list[dict]:
     """Generate synthetic pairs across all concepts, cycling if needed."""
-    print(f"\n[3/3] Generating {target} synthetic pairs via OpenAI ({OPENAI_MODEL})...")
+    print("\n[3/3] Generating {target} synthetic pairs via OpenAI ({OPENAI_MODEL})...")
     pairs = []
     # concepts_cycled = CONCEPTS * ((target // len(CONCEPTS)) + 2)
     # random.shuffle(concepts_cycled)
