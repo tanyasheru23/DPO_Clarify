@@ -16,7 +16,6 @@ from src.stack_exchange_pairs import build_stackexchange_pairs
 from src.eli5_pairs import build_eli5_pairs
 from src.synthetic_pairs import build_synthetic_pairs
 from src.save_dataset import save_dataset
-from pathlib import Path
 from config import TARGET_SE_PAIRS, TARGET_ELI5_PAIRS, TARGET_SYNTH_PAIRS, PARTS_DIR
 
 if __name__ == "__main__":
