@@ -54,7 +54,7 @@ if __name__ == "__main__":
         json.dump(synth_pairs, f)
     print(f"✓ {PARTS_DIR}/synth_pairs.json saved ({len(synth_pairs)} pairs)")
 
-    Combine only after all three are done
+    # Combine only after all three are done
     se_pairs    = json.load(open(PARTS_DIR/"se_pairs.json"))
     eli5_pairs  = json.load(open(PARTS_DIR/"eli5_pairs.json"))
     synth_pairs = json.load(open(PARTS_DIR/"synth_pairs.json"))
