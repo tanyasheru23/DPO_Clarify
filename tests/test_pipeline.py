@@ -3,7 +3,7 @@
 # from unittest.mock import patch
 
 # import pytest
-from src.utils import clean_html, get_se_domain
+from src.utils import clean_html, get_se_domain, ALLOWED_DOMAINS
 # from src.save_dataset import validate_pair
 # from src.synthetic_pairs import build_synthetic_pairs
 # from src.eli5_pairs import build_eli5_pairs
