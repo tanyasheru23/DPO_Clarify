@@ -1,5 +1,5 @@
 from config import MIN_ANSWER_LENGTH, MIN_SCORE_GAP
-from src.utils import clean_html, get_se_domain, ALLOWED_DOMAINS
+from src.utils import clean_html, ALLOWED_DOMAINS
 from datasets import load_dataset
 from datasets import concatenate_datasets
 
