@@ -9,8 +9,9 @@ ALLOWED_DOMAINS = [
     "economics",
     "softwareengineering",
     "stats",
-    "physics"
+    "physics",
 ]
+
 
 def get_se_domain(metadata: str | list) -> str | None:
     """Extract subdomain from SE URL e.g. 'math' from 'math.stackexchange.com'"""
@@ -18,6 +19,7 @@ def get_se_domain(metadata: str | list) -> str | None:
         # metadata comes as a list of URLs, first one is the question URL
         if isinstance(metadata, str):
             import json
+
             metadata = json.loads(metadata)
         url = metadata[0]  # e.g. "https://math.stackexchange.com/questions/123"
         # extract the part before .stackexchange

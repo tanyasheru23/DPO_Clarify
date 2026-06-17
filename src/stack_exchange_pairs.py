@@ -28,12 +28,7 @@ def build_stackexchange_pairs(target: int) -> list[dict]:
     pairs = []
     skipped = 0
 
-    reasons = {
-        "few_answers": 0,
-        "score_gap": 0,
-        "answer_length": 0,
-        "same_answer": 0
-    }
+    reasons = {"few_answers": 0, "score_gap": 0, "answer_length": 0, "same_answer": 0}
 
     for row in ds:
         if len(pairs) >= target:
@@ -64,7 +59,7 @@ def build_stackexchange_pairs(target: int) -> list[dict]:
 
         chosen_text = clean_html(best.get("text", ""))
         rejected_text = clean_html(worst.get("text", ""))
-        
+
         if chosen_text == rejected_text:
             skipped += 1
             reasons["same_answer"] += 1

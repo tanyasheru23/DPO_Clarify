@@ -16,7 +16,7 @@ random_rows = random.sample(data, k=num_of_rows_to_check)
 with open("output_v2.txt", "w", encoding="utf-8") as f:
     for row in random_rows:
         f.write("\n")
-        f.write("="*120)
+        f.write("=" * 120)
         f.write(f"\nprompt:\n{row['prompt']}")
         f.write(f"\nchoosen:\n{row['chosen']}")
         f.write(f"\nrejected:\n{row['rejected']}")

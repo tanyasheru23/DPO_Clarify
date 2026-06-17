@@ -14,6 +14,7 @@ from src.utils import clean_html, get_se_domain, ALLOWED_DOMAINS
 # utils.py
 ##############################
 
+
 def test_clean_html():
 
     html = "<p>Hello</p><b>World</b>"
@@ -28,7 +29,7 @@ def test_get_se_domain_list():
     metadata = [
         "https://math.stackexchange.com/questions/123",
         "https://math.stackexchange.com",
-        "https://math.stackexchange.com/users/1"
+        "https://math.stackexchange.com/users/1",
     ]
 
     assert get_se_domain(metadata) == "math"
@@ -57,6 +58,7 @@ def test_get_se_domain_invalid_input():
 def test_get_se_domain_none():
 
     assert get_se_domain(None) is None
+
 
 def test_allowed_domains():
 
