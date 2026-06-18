@@ -31,12 +31,15 @@ Direct Preference Optimization (DPO) can instead learn:
 
 ## Current Status
 
-* [x] Dataset collection
-* [x] Dataset validation
-* [x] CI pipeline (lint + tests)
-* [ ] Mistral-7B + QLoRA training
-* [ ] DPO training
-* [ ] Evaluation
+## Status
+
+- [x] Dataset collection
+- [x] Dataset engineering & auditing
+- [x] CI pipeline (ruff + pytest)
+- [ ] Baseline evaluation
+- [ ] Mistral-7B + QLoRA training
+- [ ] DPO training
+- [ ] Post-training evaluation
 
 ---
 
@@ -157,3 +160,13 @@ A pull request must pass all checks before merging.
 * Run DPO training
 * Evaluate explanation quality
 * Compare against SFT baselines
+
+---
+
+## Docs
+
+## Dataset Engineering
+
+During dataset construction, I redesigned the ingestion pipeline to load domain-specific StackExchange subsets, instrumented rejection statistics, and diagnosed a hyperparameter bottleneck that was filtering out 99.8% of candidate examples.
+
+Read more: [Dataset Engineering Notes](docs/dataset_engineering.md)
