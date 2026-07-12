@@ -6,3 +6,9 @@ huggingface-hub==1.19.0
 pytest==8.4.2
 pytest-cov==6.2.1
 pytest-pythonpath
+textstat==0.7.13
+huggingface_hub==1.23.0
+transformers==5.13.1
+peft==0.19.1
+bitsandbytes==0.49.2
+bert-score==0.3.13

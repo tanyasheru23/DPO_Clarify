@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "category": "AI",
+    "prompt": "What is reinforcement learning and how is it different from supervised learning?"
+  },
+  {
+    "id": 2,
+    "category": "Computer Science",
+    "prompt": "What is dynamic programming and when should it be used?"
+  },
+  {
+    "id": 3,
+    "category": "Computer Science",
+    "prompt": "Explain how hashing works without using technical jargon."
+  },
+  {
+    "id": 4,
+    "category": "Computer Science",
+    "prompt": "What is the difference between a process and a thread?"
+  },
+  {
+    "id": 5,
+    "category": "Statistics",
+    "prompt": "Explain the difference between correlation and causation."
+  },
+  {
+    "id": 6,
+    "category": "Statistics",
+    "prompt": "Why is standard deviation useful?"
+  },
+  {
+    "id": 7,
+    "category": "Statistics",
+    "prompt": "What is Bayes' theorem and why is it important?"
+  },
+  {
+    "id": 8,
+    "category": "Mathematics",
+    "prompt": "Why do we need logarithms?"
+  },
+  {
+    "id": 9,
+    "category": "Physics",
+    "prompt": "Why does entropy tend to increase?"
+  },
+  {
+    "id": 10,
+    "category": "Biology",
+    "prompt": "How does DNA store genetic information, and how is that information used to build proteins?"
+  },
+  {
+    "id": 11,
+    "category": "Biology",
+    "prompt": "Explain how vaccines train the immune system."
+  },
+  {
+    "id": 12,
+    "category": "Biology",
+    "prompt": "Why do humans need sleep?"
+  },
+  {
+    "id": 13,
+    "category": "Chemistry",
+    "prompt": "Why does salt dissolve in water?"
+  },
+  {
+    "id": 14,
+    "category": "Software Engineering",
+    "prompt": "Why are unit tests important in software development?"
+  },
+  {
+    "id": 15,
+    "category": "Software Engineering",
+    "prompt": "Explain version control to someone who has never programmed before."
+  },
+  {
+    "id": 16,
+    "category": "General Reasoning",
+    "prompt": "Explain the concept of opportunity cost using a simple daily-life scenario."
+  },
+  {
+    "id": 17,
+    "category": "General Reasoning",
+    "prompt": "Explain the Pareto Principle (80/20 rule) with practical examples."
+  },
+  {
+    "id": 18,
+    "category": "Chemistry",
+    "prompt": "Why do chemical reactions release or absorb energy? What is happening at the atomic level?"
+  },
+  {
+    "id": 19,
+    "category": "Chemistry",
+    "prompt": "Why do some substances conduct electricity while others do not?"
+  },
+  {
+    "id": 20,
+    "category": "General Reasoning",
+    "prompt": "Teach me what compound interest is as if I were a high school student."
+  },
+  {
+    "id": 21,
+    "category": "Computer Science",
+    "prompt": "What is recursion? Explain it in a way that actually makes sense."
+  },
+  {
+    "id": 22,
+    "category": "Computer Science",
+    "prompt": "How does a binary search actually find an element? Walk me through the intuition."
+  },
+  {
+    "id": 23,
+    "category": "Computer Science",
+    "prompt": "What is Big O notation and why do programmers care about it?"
+  },
+  {
+    "id": 24,
+    "category": "Computer Science",
+    "prompt": "How does a hash map work internally? Where does the value actually go?"
+  },
+  {
+    "id": 25,
+    "category": "Computer Science",
+    "prompt": "What is the difference between a stack and a queue? When would you use each?"
+  },
+  {
+    "id": 26,
+    "category": "Computer Science",
+    "prompt": "Why do we need pointers in programming? What problem do they solve?"
+  },
+  {
+    "id": 27,
+    "category": "Computer Science",
+    "prompt": "I keep hearing about linked lists vs arrays but I don't get when one is better than the other. Can you explain?"
+  },
+  {
+    "id": 28,
+    "category": "Computer Science",
+    "prompt": "What is the difference between compiled and interpreted programming languages?"
+  },
+  {
+    "id": 29,
+    "category": "ML",
+    "prompt": "What is the intuition behind why gradient descent works?"
+  },
+  {
+    "id": 30,
+    "category": "ML",
+    "prompt": "Why does overfitting happen and why is it a problem?"
+  },
+  {
+    "id": 31,
+    "category": "ML",
+    "prompt": "What is an embedding in machine learning? What does it actually represent?"
+  },
+  {
+    "id": 32,
+    "category": "ML",
+    "prompt": "How does the attention mechanism in transformers actually work?"
+  },
+  {
+    "id": 33,
+    "category": "ML",
+    "prompt": "Why do neural networks need activation functions? What happens if you remove them?"
+  },
+  {
+    "id": 34,
+    "category": "ML",
+    "prompt": "What is backpropagation and how does a neural network actually learn from it?"
+  },
+  {
+    "id": 35,
+    "category": "ML",
+    "prompt": "What is the difference between supervised and unsupervised learning? Give me a real example of each."
+  },
+  {
+    "id": 36,
+    "category": "Mathematics",
+    "prompt": "What is the intuition behind a derivative? What is it actually telling you?"
+  },
+  {
+    "id": 37,
+    "category": "Mathematics",
+    "prompt": "I never really understood what a logarithm is. Can you explain it in simple terms?"
+  },
+  {
+    "id": 38,
+    "category": "Mathematics",
+    "prompt": "What is the Central Limit Theorem and why does everyone in statistics care about it?"
+  },
+  {
+    "id": 39,
+    "category": "Mathematics",
+    "prompt": "I keep hearing about Bayes theorem but the formula never clicks. Can you explain what it is actually doing?"
+  },
+  {
+    "id": 40,
+    "category": "Mathematics",
+    "prompt": "What does it actually mean for two things to be correlated? And why does correlation not mean causation?"
+  },
+  {
+    "id": 41,
+    "category": "Mathematics",
+    "prompt": "What is a p-value? Every explanation I find is confusing."
+  },
+  {
+    "id": 42,
+    "category": "Mathematics",
+    "prompt": "What is the intuition behind eigenvectors and eigenvalues?"
+  },
+  {
+    "id": 43,
+    "category": "Mathematics",
+    "prompt": "What is a confidence interval? What does it actually mean when someone says 95% confidence interval?"
+  },
+  {
+    "id": 44,
+    "category": "Physics",
+    "prompt": "Why does entropy always increase? What is actually happening at a physical level?"
+  },
+  {
+    "id": 45,
+    "category": "Physics",
+    "prompt": "What is quantum superposition? Is Schrodinger's cat actually a useful way to think about it?"
+  },
+  {
+    "id": 46,
+    "category": "Biology",
+    "prompt": "Why do antibiotics work against bacteria but not viruses?"
+  },
+  {
+    "id": 47,
+    "category": "Physics",
+    "prompt": "Why is the speed of light the universal speed limit? What would happen if something went faster?"
+  },
+  {
+    "id": 48,
+    "category": "Economics",
+    "prompt": "How does compound interest actually work? Why does starting early matter so much?"
+  },
+  {
+    "id": 49,
+    "category": "Economics",
+    "prompt": "Why does inflation happen? What is actually causing prices to rise?"
+  },
+  {
+    "id": 50,
+    "category": "Economics",
+    "prompt": "What is opportunity cost? Can you give me a real example from everyday life?"
+  }
+]
