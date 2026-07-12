@@ -1,7 +1,6 @@
 openai==2.41.1
 datasets==5.0.0
 python-dotenv==1.2.2
-huggingface-hub==1.19.0
 
 pytest==8.4.2
 pytest-cov==6.2.1
