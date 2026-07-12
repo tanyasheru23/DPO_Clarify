@@ -27,6 +27,7 @@ from config import RESULTS_DIR
 # EVALUATE
 # ─────────────────────────────────────────────
 
+
 def evaluate(responses_path: str, skip_judge: bool = False) -> dict:
     """
     Load responses, compute metrics + judge scores, save report.
@@ -55,10 +56,10 @@ def evaluate(responses_path: str, skip_judge: bool = False) -> dict:
 
     # ── Step 4: build report ──
     report = {
-        "model":     model_name,
+        "model": model_name,
         "n_samples": len(responses),
-        "summary":   summary,
-        "results":   responses,
+        "summary": summary,
+        "results": responses,
     }
 
     # ── Step 5: save ──
@@ -77,11 +78,19 @@ def compute_summary(responses: list[dict], skip_judge: bool) -> dict:
 
     # Overall averages — metrics
     metric_keys = [
-        "flesch_reading_ease", "flesch_kincaid_grade", "word_count",
-        "jargon_density", "example_score", "analogy_score",
-        "definition_first", "has_steps",
-        "bertscore_f1", "is_non_english", "non_english_ratio",
-        "has_repeated_prompt", "formatting_error_rate"
+        "flesch_reading_ease",
+        "flesch_kincaid_grade",
+        "word_count",
+        "jargon_density",
+        "example_score",
+        "analogy_score",
+        "definition_first",
+        "has_steps",
+        "bertscore_f1",
+        "is_non_english",
+        "non_english_ratio",
+        "has_repeated_prompt",
+        "formatting_error_rate",
     ]
     overall_metrics = {}
     for key in metric_keys:
@@ -91,8 +100,14 @@ def compute_summary(responses: list[dict], skip_judge: bool) -> dict:
     # Overall averages — judge scores
     overall_judge = {}
     if not skip_judge:
-        judge_keys = ["clarity", "beginner_friendliness", "use_of_examples",
-                      "jargon_handling", "logical_flow", "overall"]
+        judge_keys = [
+            "clarity",
+            "beginner_friendliness",
+            "use_of_examples",
+            "jargon_handling",
+            "logical_flow",
+            "overall",
+        ]
         for key in judge_keys:
             vals = [
                 r["judge_scores"][key]
@@ -116,42 +131,44 @@ def compute_summary(responses: list[dict], skip_judge: bool) -> dict:
         )
         if not skip_judge:
             overall_vals = [
-                i["judge_scores"]["overall"]
-                for i in items
-                if i.get("judge_scores")
+                i["judge_scores"]["overall"] for i in items if i.get("judge_scores")
             ]
-            category_summary[category]["judge_overall"] = round(
-                sum(overall_vals) / len(overall_vals), 2
-            ) if overall_vals else 0
+            category_summary[category]["judge_overall"] = (
+                round(sum(overall_vals) / len(overall_vals), 2) if overall_vals else 0
+            )
 
     return {
         "overall_metrics": overall_metrics,
-        "overall_judge":overall_judge,
-        "by_category":category_summary,
+        "overall_judge": overall_judge,
+        "by_category": category_summary,
     }
 
 
 def print_summary(summary: dict, model_name: str):
     """Print a clean summary table to terminal."""
-    print(f"\n{'='*50}")
+    print(f"\n{'=' * 50}")
     print(f"EVALUATION SUMMARY — {model_name.upper()}")
-    print(f"{'='*50}")
+    print(f"{'=' * 50}")
 
     print("\nReadability metrics:")
     m = summary["overall_metrics"]
-    print(f"  Flesch reading ease:  {m.get('flesch_reading_ease')}  (higher = easier, 60-70 is ideal)")
+    print(
+        f"  Flesch reading ease:  {m.get('flesch_reading_ease')}  (higher = easier, 60-70 is ideal)"
+    )
     print(f"  Grade level:          {m.get('flesch_kincaid_grade')}")
     print(f"  Avg word count:       {m.get('word_count')}")
     print(f"  Jargon density:       {m.get('jargon_density')}")
     print(f"  Avg example signals:  {m.get('example_score')}")
     print(f"  Avg analogy signals:  {m.get('analogy_score')}")
-    print(f"  BERTScore F1:         {m.get('bertscore_f1')}  (higher = more relevant to prompt)")
+    print(
+        f"  BERTScore F1:         {m.get('bertscore_f1')}  (higher = more relevant to prompt)"
+    )
     print(f"  Non-English ratio:    {m.get('non_english_ratio')}  (0 = fully English)")
     print(f"  Formatting error rate:{m.get('formatting_error_rate')}  (0 = clean)")
 
     if summary.get("overall_judge"):
         j = summary["overall_judge"]
-        print(f"\nLLM-as-judge scores (1-5):")
+        print("\nLLM-as-judge scores (1-5):")
         print(f"  Clarity:              {j.get('clarity')}")
         print(f"  Beginner friendly:    {j.get('beginner_friendliness')}")
         print(f"  Use of examples:      {j.get('use_of_examples')}")
@@ -160,7 +177,7 @@ def print_summary(summary: dict, model_name: str):
         print(f"  Overall:              {j.get('overall')}")
 
     if summary.get("by_category"):
-        print(f"\nJudge overall by category:")
+        print("\nJudge overall by category:")
         for category, stats in summary["by_category"].items():
             score = stats.get("judge_overall", "n/a")
             print(f"  {category:15s} {score}")
@@ -176,12 +193,12 @@ if __name__ == "__main__":
         "--responses",
         type=str,
         required=True,
-        help="Path to responses JSON file (output of generate.py)"
+        help="Path to responses JSON file (output of generate.py)",
     )
     parser.add_argument(
         "--no-judge",
         action="store_true",
-        help="Skip LLM-as-judge (no API cost, only textstat + heuristics)"
+        help="Skip LLM-as-judge (no API cost, only textstat + heuristics)",
     )
     args = parser.parse_args()
     evaluate(args.responses, skip_judge=args.no_judge)

@@ -5,7 +5,7 @@ DATA_DIR = Path("data")
 OUTPUT_JSONL = DATA_DIR / "dataset.jsonl"
 OUTPUT_HF_DIR = DATA_DIR / "dataset_hf"
 PARTS_DIR = DATA_DIR / "parts"
-EVAL_PROMPTS_PATH  = DATA_DIR / "eval_prompts.json"
+EVAL_PROMPTS_PATH = DATA_DIR / "eval_prompts.json"
 RESULTS_DIR = Path("results")
 
 # Create directories once
@@ -27,6 +27,6 @@ JUDGE_MODEL = "gpt-4o"
 # ─────────────────────────────────────────────
 # MODELS
 # ─────────────────────────────────────────────
-BASE_MODEL         = Path("models/Qwen2.5-7B-Instruct")
-DPO_MODEL_DIR      = Path("models/dpo-output")
-SFT_MODEL_DIR      = Path("models/sft-output")
+BASE_MODEL = Path("models/Qwen2.5-7B-Instruct")
+DPO_MODEL_DIR = Path("models/dpo-output")
+SFT_MODEL_DIR = Path("models/sft-output")
