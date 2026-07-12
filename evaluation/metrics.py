@@ -44,35 +44,94 @@ import textstat
 
 JARGON_WORDS = {
     # Math
-    "bijective", "surjective", "injective", "isomorphism", "homeomorphism",
-    "eigendecomposition", "stochastic", "deterministic", "heuristic",
-    "asymptotic", "convergence", "divergence", "monotonic",
+    "bijective",
+    "surjective",
+    "injective",
+    "isomorphism",
+    "homeomorphism",
+    "eigendecomposition",
+    "stochastic",
+    "deterministic",
+    "heuristic",
+    "asymptotic",
+    "convergence",
+    "divergence",
+    "monotonic",
     # CS
-    "polymorphism", "encapsulation", "instantiation", "idempotent",
-    "memoization", "serialization", "deserialization", "instantiate",
-    "immutable", "concurrency", "parallelism", "asynchronous",
+    "polymorphism",
+    "encapsulation",
+    "instantiation",
+    "idempotent",
+    "memoization",
+    "serialization",
+    "deserialization",
+    "instantiate",
+    "immutable",
+    "concurrency",
+    "parallelism",
+    "asynchronous",
     # ML
-    "hyperparameter", "regularization", "backpropagation", "stochastic",
-    "gradient", "optimization", "convergence", "epoch", "minibatch",
-    "softmax", "relu", "sigmoid", "perceptron", "autoencoder",
+    "hyperparameter",
+    "regularization",
+    "backpropagation",
+    "stochastic",
+    "gradient",
+    "optimization",
+    "convergence",
+    "epoch",
+    "minibatch",
+    "softmax",
+    "relu",
+    "sigmoid",
+    "perceptron",
+    "autoencoder",
     # Physics
-    "thermodynamic", "electromagnetic", "eigenstate", "superposition",
-    "wavefunction", "quantization", "relativistic",
+    "thermodynamic",
+    "electromagnetic",
+    "eigenstate",
+    "superposition",
+    "wavefunction",
+    "quantization",
+    "relativistic",
     # Stats
-    "heteroscedasticity", "autocorrelation", "multicollinearity",
-    "frequentist", "bayesian", "posterior", "likelihood",
+    "heteroscedasticity",
+    "autocorrelation",
+    "multicollinearity",
+    "frequentist",
+    "bayesian",
+    "posterior",
+    "likelihood",
 }
 
 EXAMPLE_SIGNALS = [
-    "for example", "for instance", "such as", "e.g.", "let's say",
-    "imagine", "suppose", "consider", "think of", "picture this",
-    "like when", "just like", "as an example",
+    "for example",
+    "for instance",
+    "such as",
+    "e.g.",
+    "let's say",
+    "imagine",
+    "suppose",
+    "consider",
+    "think of",
+    "picture this",
+    "like when",
+    "just like",
+    "as an example",
 ]
 
 ANALOGY_SIGNALS = [
-    "like a", "like an", "similar to", "it's like", "think of it as",
-    "imagine it as", "just like", "same as", "analogous to",
-    "is similar to", "works like", "acts like",
+    "like a",
+    "like an",
+    "similar to",
+    "it's like",
+    "think of it as",
+    "imagine it as",
+    "just like",
+    "same as",
+    "analogous to",
+    "is similar to",
+    "works like",
+    "acts like",
 ]
 
 DEFINITION_PATTERNS = [
@@ -88,13 +147,14 @@ DEFINITION_PATTERNS = [
 # READABILITY
 # ─────────────────────────────────────────────
 
+
 def compute_readability(text: str) -> dict:
     """Run all textstat readability metrics."""
     return {
-        "flesch_reading_ease":   round(textstat.flesch_reading_ease(text), 2),
-        "flesch_kincaid_grade":  round(textstat.flesch_kincaid_grade(text), 2),
-        "smog_index":            round(textstat.smog_index(text), 2),
-        "coleman_liau_index":    round(textstat.coleman_liau_index(text), 2),
+        "flesch_reading_ease": round(textstat.flesch_reading_ease(text), 2),
+        "flesch_kincaid_grade": round(textstat.flesch_kincaid_grade(text), 2),
+        "smog_index": round(textstat.smog_index(text), 2),
+        "coleman_liau_index": round(textstat.coleman_liau_index(text), 2),
         "automated_readability": round(textstat.automated_readability_index(text), 2),
     }
 
@@ -103,17 +163,16 @@ def compute_readability(text: str) -> dict:
 # HEURISTICS
 # ─────────────────────────────────────────────
 
+
 def compute_heuristics(text: str) -> dict:
     """Compute custom heuristic metrics."""
     text_lower = text.lower()
-    words      = text.split()
-    sentences  = re.split(r'[.!?]+', text)
-    sentences  = [s.strip() for s in sentences if s.strip()]
+    words = text.split()
+    sentences = re.split(r"[.!?]+", text)
+    sentences = [s.strip() for s in sentences if s.strip()]
 
     word_count = len(words)
-    avg_sentence_length = round(
-        word_count / len(sentences) if sentences else 0, 2
-    )
+    avg_sentence_length = round(word_count / len(sentences) if sentences else 0, 2)
     jargon_count = sum(1 for w in words if w.lower().strip(".,;:") in JARGON_WORDS)
     jargon_density = round(jargon_count / word_count if word_count > 0 else 0, 4)
     example_score = sum(1 for signal in EXAMPLE_SIGNALS if signal in text_lower)
@@ -121,16 +180,16 @@ def compute_heuristics(text: str) -> dict:
     definition_first = int(
         any(re.match(pattern, text) for pattern in DEFINITION_PATTERNS)
     )
-    has_steps = int(bool(re.search(r'\b(1\.|step 1|first,|firstly)', text_lower)))
+    has_steps = int(bool(re.search(r"\b(1\.|step 1|first,|firstly)", text_lower)))
 
     return {
-        "word_count":           word_count,
-        "avg_sentence_length":  avg_sentence_length,
-        "jargon_density":       jargon_density,
-        "example_score":        example_score,
-        "analogy_score":        analogy_score,
-        "definition_first":     definition_first,
-        "has_steps":            has_steps,
+        "word_count": word_count,
+        "avg_sentence_length": avg_sentence_length,
+        "jargon_density": jargon_density,
+        "example_score": example_score,
+        "analogy_score": analogy_score,
+        "definition_first": definition_first,
+        "has_steps": has_steps,
     }
 
 
@@ -141,6 +200,7 @@ def compute_heuristics(text: str) -> dict:
 # answered the question or went off-topic
 # ─────────────────────────────────────────────
 
+
 def compute_bertscore(prompt: str, response: str) -> dict:
     """
     Compute BERTScore between prompt and response.
@@ -150,24 +210,25 @@ def compute_bertscore(prompt: str, response: str) -> dict:
     """
     try:
         from bert_score import score as bert_score_fn
+
         P, R, F1 = bert_score_fn(
             cands=[response],
             refs=[prompt],
-            model_type="distilbert-base-uncased",   # small model, fast
+            model_type="distilbert-base-uncased",  # small model, fast
             lang="en",
             verbose=False,
         )
         return {
             "bertscore_precision": round(P[0].item(), 4),
-            "bertscore_recall":    round(R[0].item(), 4),
-            "bertscore_f1":        round(F1[0].item(), 4),
+            "bertscore_recall": round(R[0].item(), 4),
+            "bertscore_f1": round(F1[0].item(), 4),
         }
     except Exception as e:
         print(f"  ⚠ BERTScore failed: {e}")
         return {
             "bertscore_precision": None,
-            "bertscore_recall":    None,
-            "bertscore_f1":        None,
+            "bertscore_recall": None,
+            "bertscore_f1": None,
         }
 
 
@@ -176,6 +237,7 @@ def compute_bertscore(prompt: str, response: str) -> dict:
 # Catches: Chinese/non-English output, prompt
 # repetition, empty responses
 # ─────────────────────────────────────────────
+
 
 def compute_formatting(prompt: str, response: str) -> dict:
     """
@@ -187,19 +249,22 @@ def compute_formatting(prompt: str, response: str) -> dict:
     formatting_error_rate: combined score — fraction of errors present (0=clean)
     """
     # Non-English detection — check for CJK characters (Chinese/Japanese/Korean)
-    cjk_chars = sum(1 for c in response if '\u4e00' <= c <= '\u9fff'
-                                        or '\u3040' <= c <= '\u30ff')
-    is_non_english = int(cjk_chars > 5)   # allow up to 5 stray chars
+    cjk_chars = sum(
+        1 for c in response if "\u4e00" <= c <= "\u9fff" or "\u3040" <= c <= "\u30ff"
+    )
+    is_non_english = int(cjk_chars > 5)  # allow up to 5 stray chars
 
     # Non-ASCII ratio — broader than CJK, catches Arabic, Cyrillic etc
     non_ascii = sum(1 for c in response if ord(c) > 127)
     non_english_ratio = round(non_ascii / len(response) if response else 0, 4)
 
     # Prompt repetition — did model just echo the question?
-    prompt_words  = set(prompt.lower().split())
-    response_start = set(response[:len(prompt)].lower().split())
-    overlap = len(prompt_words & response_start) / len(prompt_words) if prompt_words else 0
-    has_repeated_prompt = int(overlap > 0.7)   # >70% word overlap = repetition
+    prompt_words = set(prompt.lower().split())
+    response_start = set(response[: len(prompt)].lower().split())
+    overlap = (
+        len(prompt_words & response_start) / len(prompt_words) if prompt_words else 0
+    )
+    has_repeated_prompt = int(overlap > 0.7)  # >70% word overlap = repetition
 
     # Combined formatting error rate
     # Each issue contributes equally — average of binary flags + severity of ratio
@@ -207,9 +272,9 @@ def compute_formatting(prompt: str, response: str) -> dict:
     formatting_error_rate = round(sum(errors) / 3, 4)
 
     return {
-        "is_non_english":        is_non_english,
-        "non_english_ratio":     non_english_ratio,
-        "has_repeated_prompt":   has_repeated_prompt,
+        "is_non_english": is_non_english,
+        "non_english_ratio": non_english_ratio,
+        "has_repeated_prompt": has_repeated_prompt,
         "formatting_error_rate": formatting_error_rate,
     }
 
@@ -217,6 +282,7 @@ def compute_formatting(prompt: str, response: str) -> dict:
 # ─────────────────────────────────────────────
 # COMBINED
 # ─────────────────────────────────────────────
+
 
 def compute_all_metrics(prompt: str, text: str) -> dict:
     """

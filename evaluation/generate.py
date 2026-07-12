@@ -3,7 +3,7 @@ generate.py
 ===========
 Loads a model and generates responses for all eval prompts.
 Saves responses to results/{model_name}_responses.json
- 
+
 Usage:
     python -m evaluation.generate --model base
     python -m evaluation.generate --model ./sft-output
@@ -18,13 +18,13 @@ from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
 from tqdm import tqdm
-from time import sleep
 from config import BASE_MODEL, RESULTS_DIR, EVAL_PROMPTS_PATH
 
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # LOAD MODEL
- 
+
+
 def load_model(model_arg: str):
     """
     Load base model or finetuned adapter.
@@ -40,12 +40,12 @@ def load_model(model_arg: str):
     )
 
     # Loading the model from local directory
-     
+
     print(f"Loading base model: {BASE_MODEL}")
     base = AutoModelForCausalLM.from_pretrained(
         str(BASE_MODEL),
         quantization_config=bnb_config,
-        device_map={"":0}, #Map to GPU
+        device_map={"": 0},  # Map to GPU
         trust_remote_code=True,
         local_files_only=True,
     )
@@ -57,7 +57,7 @@ def load_model(model_arg: str):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
- 
+
     adapter_path = Path(model_arg)
 
     if adapter_path.exists():
@@ -65,11 +65,13 @@ def load_model(model_arg: str):
         model = PeftModel.from_pretrained(base, adapter_path)
     else:
         model = base
- 
+
     model.eval()
     return model, tokenizer
 
+
 # GENERATE RESPONSES
+
 
 def generate_response(
     model,
@@ -90,7 +92,7 @@ def generate_response(
         {
             "role": "user",
             "content": prompt,
-        }
+        },
     ]
 
     text = tokenizer.apply_chat_template(
@@ -112,15 +114,15 @@ def generate_response(
         outputs = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
-            temperature=1.0,        # required when do_sample=False
-            do_sample=False,        # greedy — deterministic, reproducible
+            temperature=1.0,  # required when do_sample=False
+            do_sample=False,  # greedy — deterministic, reproducible
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
         )
 
     latency = time.time() - start
 
-    generated_tokens = outputs[0][inputs["input_ids"].shape[1]:]
+    generated_tokens = outputs[0][inputs["input_ids"].shape[1] :]
 
     response = tokenizer.decode(
         generated_tokens,
@@ -133,24 +135,23 @@ def generate_response(
         "tokens_generated": len(generated_tokens),
     }
 
+
 def generate_all(model_arg: str):
     """Generate responses for all prompts and save to results/."""
     # Load prompts
     prompts = json.loads(Path(EVAL_PROMPTS_PATH).read_text(encoding="utf-8"))
     print(f"Loaded {len(prompts)} prompts")
- 
+
     # Load model
     model, tokenizer = load_model(model_arg)
-     
+
     # Model name for output file
     model_name = "base" if model_arg == "base" else Path(model_arg).name
- 
+
     responses = []
 
     for item in tqdm(prompts, desc="Generating"):
-
         try:
-
             result = generate_response(
                 model,
                 tokenizer,
@@ -176,7 +177,6 @@ def generate_all(model_arg: str):
             )
 
         except Exception as e:
-
             print(f"\nError on prompt {item['id']}")
 
             print(e)
@@ -210,19 +210,19 @@ def generate_all(model_arg: str):
 
     return responses
 
-# MAIN
- 
-if __name__ == "__main__":
 
+# MAIN
+
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
         "--model",
         type=str,
         default="base",
-        help="'base' for baseline model, or path to finetuned adapter"
+        help="'base' for baseline model, or path to finetuned adapter",
     )
 
     args = parser.parse_args()
-    
+
     generate_all(args.model)

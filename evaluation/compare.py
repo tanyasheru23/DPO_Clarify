@@ -20,22 +20,22 @@ def load_report(path: str) -> dict:
 
 
 def compare(report_paths: list[str]):
-    reports    = [load_report(p) for p in report_paths]
+    reports = [load_report(p) for p in report_paths]
     model_names = [r["model"] for r in reports]
 
-    print(f"\n{'='*70}")
+    print(f"\n{'=' * 70}")
     print("MODEL COMPARISON")
-    print(f"{'='*70}")
+    print(f"{'=' * 70}")
     print(f"Models: {' | '.join(model_names)}\n")
 
     # ── Readability metrics table ──
     metric_keys = [
-        ("flesch_reading_ease",  "Flesch reading ease  (↑ easier)"),
+        ("flesch_reading_ease", "Flesch reading ease  (↑ easier)"),
         ("flesch_kincaid_grade", "Grade level          (↓ simpler)"),
-        ("word_count",           "Avg word count"),
-        ("jargon_density",       "Jargon density       (↓ better)"),
-        ("example_score",        "Example signals      (↑ better)"),
-        ("analogy_score",        "Analogy signals      (↑ better)"),
+        ("word_count", "Avg word count"),
+        ("jargon_density", "Jargon density       (↓ better)"),
+        ("example_score", "Example signals      (↑ better)"),
+        ("analogy_score", "Analogy signals      (↑ better)"),
     ]
 
     print("READABILITY METRICS")
@@ -54,18 +54,18 @@ def compare(report_paths: list[str]):
 
     # ── Judge scores table ──
     judge_keys = [
-        ("clarity",              "Clarity              (↑ better)"),
-        ("beginner_friendliness","Beginner friendly    (↑ better)"),
-        ("use_of_examples",      "Use of examples      (↑ better)"),
-        ("jargon_handling",      "Jargon handling      (↑ better)"),
-        ("logical_flow",         "Logical flow         (↑ better)"),
-        ("overall",              "OVERALL SCORE"),
+        ("clarity", "Clarity              (↑ better)"),
+        ("beginner_friendliness", "Beginner friendly    (↑ better)"),
+        ("use_of_examples", "Use of examples      (↑ better)"),
+        ("jargon_handling", "Jargon handling      (↑ better)"),
+        ("logical_flow", "Logical flow         (↑ better)"),
+        ("overall", "OVERALL SCORE"),
     ]
 
     has_judge = all(r["summary"].get("overall_judge") for r in reports)
 
     if has_judge:
-        print(f"\nLLM-AS-JUDGE SCORES (1-5)")
+        print("\nLLM-AS-JUDGE SCORES (1-5)")
         print(f"{'Metric':<35}", end="")
         for name in model_names:
             print(f"{name:>12}", end="")
@@ -88,11 +88,11 @@ def compare(report_paths: list[str]):
             for r in reports[1:]:
                 model_overall = r["summary"]["overall_judge"].get("overall", 0)
                 delta = round(model_overall - baseline_overall, 3)
-                sign  = "+" if delta > 0 else ""
+                sign = "+" if delta > 0 else ""
                 print(f"  {r['model']:20s} {sign}{delta} overall score")
 
     # ── Category breakdown ──
-    print(f"\nOVERALL JUDGE SCORE BY CATEGORY")
+    print("\nOVERALL JUDGE SCORE BY CATEGORY")
     print(f"{'Category':<20}", end="")
     for name in model_names:
         print(f"{name:>12}", end="")
@@ -106,14 +106,18 @@ def compare(report_paths: list[str]):
     for category in sorted(all_categorys):
         print(f"{category:<20}", end="")
         for r in reports:
-            val = r["summary"]["by_category"].get(category, {}).get("judge_overall", "n/a")
+            val = (
+                r["summary"]["by_category"]
+                .get(category, {})
+                .get("judge_overall", "n/a")
+            )
             print(f"{str(val):>12}", end="")
         print()
 
     # ── Save comparison report ──
     comparison = {
-        "models":   model_names,
-        "reports":  {r["model"]: r["summary"] for r in reports},
+        "models": model_names,
+        "reports": {r["model"]: r["summary"] for r in reports},
     }
     output_path = RESULTS_DIR / "comparison.json"
     output_path.write_text(json.dumps(comparison, indent=2), encoding="utf-8")
@@ -130,7 +134,7 @@ if __name__ == "__main__":
         "--reports",
         nargs="+",
         required=True,
-        help="Paths to eval JSON files, e.g. results/base_eval.json results/sft_eval.json"
+        help="Paths to eval JSON files, e.g. results/base_eval.json results/sft_eval.json",
     )
     args = parser.parse_args()
     compare(args.reports)
