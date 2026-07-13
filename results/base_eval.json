@@ -8,9 +8,9 @@
       "word_count": 90.66,
       "jargon_density": 0.002,
       "example_score": 0.58,
-      "analogy_score": 0.12,
+      "analogy_score": 0.14,
       "definition_first": 0.0,
-      "has_steps": 0.08,
+      "has_steps": 0.0,
       "bertscore_f1": 0.7,
       "is_non_english": 0.16,
       "non_english_ratio": 0.149,
@@ -19,11 +19,11 @@
     },
     "overall_judge": {
       "clarity": 3.88,
-      "beginner_friendliness": 3.82,
-      "use_of_examples": 3.28,
+      "beginner_friendliness": 3.88,
+      "use_of_examples": 3.26,
       "jargon_handling": 3.74,
       "logical_flow": 4.14,
-      "overall": 3.772
+      "overall": 3.78
     },
     "by_category": {
       "AI": {
@@ -32,7 +32,7 @@
       },
       "Computer Science": {
         "flesch_reading_ease": 56.27,
-        "judge_overall": 3.96
+        "judge_overall": 3.93
       },
       "Statistics": {
         "flesch_reading_ease": 64.54,
@@ -40,11 +40,11 @@
       },
       "Mathematics": {
         "flesch_reading_ease": 44.18,
-        "judge_overall": 3.71
+        "judge_overall": 3.73
       },
       "Physics": {
         "flesch_reading_ease": 76.78,
-        "judge_overall": 2.3
+        "judge_overall": 2.35
       },
       "Biology": {
         "flesch_reading_ease": 54.81,
@@ -52,7 +52,7 @@
       },
       "Chemistry": {
         "flesch_reading_ease": 31.57,
-        "judge_overall": 4.4
+        "judge_overall": 4.47
       },
       "Software Engineering": {
         "flesch_reading_ease": 48.72,
@@ -64,7 +64,7 @@
       },
       "ML": {
         "flesch_reading_ease": 49.45,
-        "judge_overall": 3.71
+        "judge_overall": 3.74
       },
       "Economics": {
         "flesch_reading_ease": 81.24,
@@ -108,7 +108,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, effectively using examples like a robot navigating a maze or playing chess to illustrate reinforcement learning. It explains the difference from supervised learning without assuming prior knowledge, and it logically progresses from defining RL to contrasting it with supervised learning.",
+        "reasoning": "The explanation is clear and beginner-friendly, effectively using examples like a robot navigating a maze or playing chess to illustrate reinforcement learning. It explains the difference from supervised learning without assuming prior knowledge, and all terms are well-defined, with a logical progression from concept to example.",
         "overall": 5.0
       }
     },
@@ -132,7 +132,7 @@
         "example_score": 0,
         "analogy_score": 0,
         "definition_first": 0,
-        "has_steps": 1,
+        "has_steps": 0,
         "bertscore_precision": 0.6404,
         "bertscore_recall": 0.7451,
         "bertscore_f1": 0.6888,
@@ -147,7 +147,7 @@
         "use_of_examples": 4,
         "jargon_handling": 4,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and logically structured, with good examples and minimal jargon, but could benefit from simpler language for a 15-year-old audience.",
+        "reasoning": "The explanation is clear and logically structured, providing a good overview of dynamic programming and when to use it. It includes examples, but could benefit from more detailed explanations or analogies for a complete beginner. Jargon is mostly explained, but terms like 'optimal substructure' could be simplified further.",
         "overall": 4.2
       }
     },
@@ -186,7 +186,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation uses a simple and relatable analogy of toys in a box, making it clear and easy for a beginner to understand. It avoids technical jargon and builds understanding step by step, effectively illustrating the concept of hashing.",
+        "reasoning": "The explanation uses a simple analogy of toys and a box to clearly and effectively convey the concept of hashing, making it accessible and easy to understand for a beginner without any technical jargon.",
         "overall": 5.0
       }
     },
@@ -223,10 +223,10 @@
         "clarity": 4,
         "beginner_friendliness": 4,
         "use_of_examples": 2,
-        "jargon_handling": 4,
+        "jargon_handling": 3,
         "logical_flow": 4,
-        "reasoning": "The explanation is clear and logically structured, with good handling of jargon, but it lacks concrete examples to aid understanding for beginners.",
-        "overall": 3.6
+        "reasoning": "The explanation is mostly clear and logically structured, but it lacks examples and could benefit from simpler language to enhance understanding for beginners.",
+        "overall": 3.4
       }
     },
     {
@@ -264,7 +264,7 @@
         "use_of_examples": 5,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is clear and uses a strong example to differentiate correlation and causation, but could slightly improve in clarity and jargon handling by simplifying the language further for a 15-year-old audience.",
+        "reasoning": "The explanation is mostly clear and uses a good example to differentiate correlation and causation, but could benefit from slightly more detailed explanations of terms for complete beginner friendliness.",
         "overall": 4.2
       }
     },
@@ -342,7 +342,7 @@
         "use_of_examples": 1,
         "jargon_handling": 2,
         "logical_flow": 3,
-        "reasoning": "The explanation uses technical terms like 'prior probability' and 'posterior probability' without explanation, lacks examples, and is not in English, which reduces clarity and beginner-friendliness for a 15-year-old with no prior knowledge.",
+        "reasoning": "The explanation uses technical terms like 'prior probability' and 'posterior probability' without explanation, lacks examples, and is presented in Chinese, which may not be accessible to all students, affecting clarity and beginner-friendliness.",
         "overall": 2.0
       }
     },
@@ -459,7 +459,7 @@
         "use_of_examples": 3,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is mostly clear and beginner-friendly, with a logical flow from DNA to protein synthesis, but it could benefit from more examples and a complete explanation of the translation process.",
+        "reasoning": "The explanation is mostly clear and beginner-friendly, with a logical flow from DNA to protein synthesis. It explains key terms like base pairs and mRNA, but could benefit from more examples or analogies to illustrate concepts like transcription and translation.",
         "overall": 3.8
       }
     },
@@ -498,7 +498,7 @@
         "use_of_examples": 4,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear, beginner-friendly, and logically structured, with minimal jargon that is well-explained. It could benefit from a more concrete example to enhance understanding.",
+        "reasoning": "The explanation is clear, beginner-friendly, and logically structured, with all terms explained simply. It could benefit from a more concrete example to enhance understanding.",
         "overall": 4.8
       }
     },
@@ -537,7 +537,7 @@
         "use_of_examples": 3,
         "jargon_handling": 4,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, with a logical flow, but could benefit from more concrete examples or analogies to enhance understanding; most jargon is explained simply.",
+        "reasoning": "The explanation is clear and beginner-friendly, with a logical flow, but could benefit from more concrete examples or analogies; most jargon is explained simply.",
         "overall": 4.4
       }
     },
@@ -654,7 +654,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and uses a relatable analogy of writing a story to explain version control, making it accessible to beginners without any programming knowledge. It avoids jargon and logically explains the concept step by step.",
+        "reasoning": "The explanation is clear, uses a relatable example of writing a story, avoids jargon, and logically explains the concept of version control in a way that is accessible to someone with no programming background.",
         "overall": 5.0
       }
     },
@@ -732,7 +732,7 @@
         "use_of_examples": 5,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is clear and uses practical examples to illustrate the Pareto Principle, making it accessible to beginners, though it could slightly improve in explaining the concept more thoroughly before jumping into examples.",
+        "reasoning": "The explanation is clear and uses practical examples to illustrate the Pareto Principle, making it accessible to beginners, though it could slightly improve in clarity and jargon handling by explaining the principle more simply at the start.",
         "overall": 4.2
       }
     },
@@ -769,10 +769,10 @@
         "clarity": 5,
         "beginner_friendliness": 5,
         "use_of_examples": 3,
-        "jargon_handling": 4,
+        "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and logically structured, making it accessible to beginners, though it could benefit from more concrete examples to illustrate the concepts of exothermic and endothermic reactions.",
-        "overall": 4.4
+        "reasoning": "The explanation is clear and beginner-friendly, with all terms explained simply and a logical flow, but it could benefit from more concrete examples or analogies to enhance understanding.",
+        "overall": 4.6
       }
     },
     {
@@ -849,7 +849,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear, uses a relatable analogy, provides a concrete example, explains all terms simply, and builds understanding step by step.",
+        "reasoning": "The explanation is clear and beginner-friendly, using a relatable analogy of a snowball to illustrate compound interest. It provides a concrete example with numbers, explains all terms simply, and follows a logical progression from concept to example.",
         "overall": 5.0
       }
     },
@@ -888,7 +888,7 @@
         "use_of_examples": 5,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is mostly clear and uses a helpful analogy of sorting papers to illustrate recursion, but it could benefit from slightly more detail on the base case concept.",
+        "reasoning": "The explanation is mostly clear and uses a helpful analogy of sorting papers to illustrate recursion, but it could benefit from slightly more detail on the concept of a base case.",
         "overall": 4.2
       }
     },
@@ -912,7 +912,7 @@
         "example_score": 0,
         "analogy_score": 0,
         "definition_first": 0,
-        "has_steps": 1,
+        "has_steps": 0,
         "bertscore_precision": 0.668,
         "bertscore_recall": 0.7758,
         "bertscore_f1": 0.7179,
@@ -927,7 +927,7 @@
         "use_of_examples": 4,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, with a logical step-by-step flow and simple jargon handling. It could benefit from a concrete example to illustrate the process further.",
+        "reasoning": "The explanation is clear, beginner-friendly, and logically structured, with a step-by-step process that is easy to follow; however, it could benefit from a concrete example to illustrate the process more vividly.",
         "overall": 4.8
       }
     },
@@ -963,11 +963,11 @@
       "judge_scores": {
         "clarity": 4,
         "beginner_friendliness": 4,
-        "use_of_examples": 4,
+        "use_of_examples": 3,
         "jargon_handling": 4,
-        "logical_flow": 5,
-        "reasoning": "The explanation is clear and logically structured, providing a good overview of Big O notation and its importance, with a helpful example comparing O(log n) and O(n^2). However, it could be slightly more beginner-friendly by simplifying terms like 'time complexity' and 'scalable'.",
-        "overall": 4.2
+        "logical_flow": 4,
+        "reasoning": "The explanation is clear and beginner-friendly, with a good introduction to Big O notation and its importance. It uses a simple example to compare efficiencies, but could benefit from more concrete examples or analogies. Jargon is minimal and well-explained, and the explanation follows a logical progression from definition to application.",
+        "overall": 3.8
       }
     },
     {
@@ -990,7 +990,7 @@
         "example_score": 0,
         "analogy_score": 0,
         "definition_first": 0,
-        "has_steps": 1,
+        "has_steps": 0,
         "bertscore_precision": 0.5153,
         "bertscore_recall": 0.6069,
         "bertscore_f1": 0.5574,
@@ -1027,7 +1027,7 @@
         "avg_sentence_length": 21.38,
         "jargon_density": 0.0,
         "example_score": 3,
-        "analogy_score": 1,
+        "analogy_score": 2,
         "definition_first": 0,
         "has_steps": 0,
         "bertscore_precision": 0.6716,
@@ -1044,7 +1044,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, using relatable examples like a stack of plates and a line at a ticket counter to illustrate the concepts of LIFO and FIFO. All terms are explained simply, and the logical flow builds understanding step by step.",
+        "reasoning": "The explanation is clear and beginner-friendly, using relatable examples like a stack of plates and a line at a ticket counter to illustrate the concepts of LIFO and FIFO, with all terms explained simply and a logical progression from definition to application.",
         "overall": 5.0
       }
     },
@@ -1083,7 +1083,7 @@
         "use_of_examples": 2,
         "jargon_handling": 3,
         "logical_flow": 4,
-        "reasoning": "The explanation is somewhat clear but uses terms like 'dynamic memory allocation' and 'linked lists' without examples or simpler explanations, which may confuse beginners.",
+        "reasoning": "The explanation is somewhat clear but uses terms like 'dynamic memory allocation' and 'linked lists' without examples or simpler explanations, which may confuse beginners. It logically explains the purpose of pointers but lacks concrete examples to illustrate their use.",
         "overall": 3.0
       }
     },
@@ -1121,9 +1121,9 @@
         "beginner_friendliness": 4,
         "use_of_examples": 3,
         "jargon_handling": 4,
-        "logical_flow": 4,
-        "reasoning": "The explanation is clear and beginner-friendly, with a good comparison of arrays and linked lists, but could benefit from more concrete examples or analogies to enhance understanding.",
-        "overall": 3.8
+        "logical_flow": 5,
+        "reasoning": "The explanation is clear and logically structured, making it accessible to beginners, though it could benefit from more concrete examples to illustrate the concepts of arrays and linked lists.",
+        "overall": 4.0
       }
     },
     {
@@ -1196,12 +1196,12 @@
       },
       "judge_scores": {
         "clarity": 2,
-        "beginner_friendliness": 1,
+        "beginner_friendliness": 2,
         "use_of_examples": 3,
         "jargon_handling": 1,
         "logical_flow": 3,
-        "reasoning": "The explanation uses a good analogy of a valley to illustrate gradient descent, but it is in Chinese, which may not be accessible to a 15-year-old English-speaking student, and it uses terms like '\u8d1f\u68af\u5ea6\u65b9\u5411' without explanation.",
-        "overall": 2.0
+        "reasoning": "The explanation uses a helpful analogy of a valley but is in Chinese, which may not be accessible to all students, and it lacks clear definitions of key terms like 'gradient' and 'learning rate'.",
+        "overall": 2.2
       }
     },
     {
@@ -1278,7 +1278,7 @@
         "use_of_examples": 4,
         "jargon_handling": 4,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and logically structured, providing a good overview of embeddings with an example of word vectors. It is beginner-friendly, though it could benefit from more detailed examples and simpler explanations of terms like 'high-dimensional space'.",
+        "reasoning": "The explanation is clear and logically structured, with a good example of word embeddings. It is beginner-friendly but could simplify the concept of 'high-dimensional space' further. Jargon is mostly explained, though 'numerical vectors' might need more clarification for a complete novice.",
         "overall": 4.2
       }
     },
@@ -1317,7 +1317,7 @@
         "use_of_examples": 2,
         "jargon_handling": 3,
         "logical_flow": 4,
-        "reasoning": "The explanation provides a basic overview of the attention mechanism but lacks examples and could be clearer for beginners; it uses some jargon like 'linear projections' and 'softmax function' without sufficient explanation, though it follows a logical sequence in describing the process.",
+        "reasoning": "The explanation provides a basic overview of the attention mechanism but lacks examples to aid understanding and uses some jargon without thorough explanation, which might be challenging for a beginner to grasp fully.",
         "overall": 3.0
       }
     },
@@ -1356,7 +1356,7 @@
         "use_of_examples": 4,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, effectively explaining the role of activation functions and the consequences of their removal, though it could benefit from a simple example to illustrate non-linearity.",
+        "reasoning": "The explanation is clear and beginner-friendly, effectively explaining the role of activation functions and the consequences of their removal, with a good logical flow and minimal jargon, though it could benefit from more concrete examples.",
         "overall": 4.8
       }
     },
@@ -1380,7 +1380,7 @@
         "example_score": 0,
         "analogy_score": 0,
         "definition_first": 0,
-        "has_steps": 1,
+        "has_steps": 0,
         "bertscore_precision": 0.6345,
         "bertscore_recall": 0.7728,
         "bertscore_f1": 0.6969,
@@ -1395,7 +1395,7 @@
         "use_of_examples": 2,
         "jargon_handling": 3,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and logically structured, making it accessible to beginners, but it lacks concrete examples and could explain some terms like 'gradient' and 'loss function' more simply.",
+        "reasoning": "The explanation is clear and logically structured, making it accessible to beginners, but it lacks concrete examples and could explain terms like 'gradient' and 'loss function' more simply.",
         "overall": 3.6
       }
     },
@@ -1547,12 +1547,12 @@
       },
       "judge_scores": {
         "clarity": 4,
-        "beginner_friendliness": 3,
+        "beginner_friendliness": 4,
         "use_of_examples": 2,
         "jargon_handling": 3,
         "logical_flow": 4,
-        "reasoning": "The explanation is mostly clear and logically structured, but it lacks concrete examples and uses some jargon like 'normally distributed' and 'hypothesis testing' without sufficient explanation for a beginner.",
-        "overall": 3.2
+        "reasoning": "The explanation is mostly clear and logically structured, but it lacks concrete examples that would help a beginner understand the concept better. Some jargon like 'normally distributed' and 'hypothesis testing' is used without explanation, which could be confusing for someone with no prior knowledge.",
+        "overall": 3.4
       }
     },
     {
@@ -1590,7 +1590,7 @@
         "use_of_examples": 1,
         "jargon_handling": 2,
         "logical_flow": 3,
-        "reasoning": "The explanation uses technical terms without sufficient simplification or examples, and it is presented in Chinese, which may not be accessible to all students.",
+        "reasoning": "The explanation uses technical terms without sufficient simplification or examples, making it difficult for a beginner to grasp the concept of Bayes' Theorem.",
         "overall": 2.0
       }
     },
@@ -1629,7 +1629,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, using a well-chosen example to illustrate the concept and effectively handling jargon by explaining terms simply and logically.",
+        "reasoning": "The explanation is clear and beginner-friendly, effectively using a concrete example to illustrate the concept and handling jargon well, with a logical flow that builds understanding step by step.",
         "overall": 4.8
       }
     },
@@ -1668,7 +1668,7 @@
         "use_of_examples": 2,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is clear and beginner-friendly, with good handling of jargon, but it lacks concrete examples to fully illustrate the concept of a p-value.",
+        "reasoning": "The explanation is mostly clear and beginner-friendly, with good handling of jargon, but it lacks concrete examples to fully illustrate the concept of a p-value.",
         "overall": 3.6
       }
     },
@@ -1707,7 +1707,7 @@
         "use_of_examples": 1,
         "jargon_handling": 1,
         "logical_flow": 1,
-        "reasoning": "The explanation is missing entirely, providing no information or context for understanding eigenvectors and eigenvalues.",
+        "reasoning": "The explanation is missing entirely, providing no information or context about eigenvectors and eigenvalues.",
         "overall": 1.0
       }
     },
@@ -1746,7 +1746,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear, beginner-friendly, uses a concrete example, explains jargon well, and follows a logical flow.",
+        "reasoning": "The explanation is clear, beginner-friendly, uses a concrete example, explains jargon simply, and follows a logical progression.",
         "overall": 5.0
       }
     },
@@ -1785,7 +1785,7 @@
         "use_of_examples": 1,
         "jargon_handling": 1,
         "logical_flow": 1,
-        "reasoning": "The explanation is in Chinese, which is not suitable for a 15-year-old English-speaking student, and it does not provide any information or context about entropy or its physical implications.",
+        "reasoning": "The explanation is in Chinese, which does not address the question in English, making it inaccessible and unclear for the intended audience.",
         "overall": 1.0
       }
     },
@@ -1824,7 +1824,7 @@
         "use_of_examples": 4,
         "jargon_handling": 4,
         "logical_flow": 4,
-        "reasoning": "The explanation is clear and beginner-friendly, using the well-known Schr\u00f6dinger's cat analogy to illustrate quantum superposition, though it could benefit from a bit more detail on how superposition works in practice.",
+        "reasoning": "The explanation is clear and beginner-friendly, using the well-known Schr\u00f6dinger's cat metaphor to illustrate quantum superposition, though it could benefit from a bit more detail on how superposition works in practice.",
         "overall": 4.0
       }
     },
@@ -1898,12 +1898,12 @@
       },
       "judge_scores": {
         "clarity": 4,
-        "beginner_friendliness": 3,
+        "beginner_friendliness": 4,
         "use_of_examples": 2,
         "jargon_handling": 3,
         "logical_flow": 4,
-        "reasoning": "The explanation is mostly clear and logically structured, but it lacks concrete examples and uses some jargon like 'causality' and 'time dilation' without sufficient explanation for a beginner audience.",
-        "overall": 3.2
+        "reasoning": "The explanation is mostly clear and logically structured, but lacks concrete examples and could better explain terms like 'causality' and 'time dilation' for a beginner audience.",
+        "overall": 3.4
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "use_of_examples": 1,
         "jargon_handling": 1,
         "logical_flow": 1,
-        "reasoning": "The explanation is in Chinese, which is not suitable for a 15-year-old English-speaking student, and it lacks examples and clear explanations of economic terms like 'inflation' and 'monetary supply'.",
+        "reasoning": "The explanation is in Chinese, which is not suitable for a 15-year-old English-speaking student, and it lacks examples and clear explanations of terms like 'monetary supply' and 'cost-push inflation'.",
         "overall": 1.0
       }
     },
@@ -2019,7 +2019,7 @@
         "use_of_examples": 5,
         "jargon_handling": 5,
         "logical_flow": 5,
-        "reasoning": "The explanation is clear and beginner-friendly, using a relatable example to illustrate the concept of opportunity cost without any unexplained jargon, and it logically explains the concept step by step.",
+        "reasoning": "The explanation is clear and easy to understand, uses a relatable example, explains the concept without jargon, and logically explains opportunity cost step by step.",
         "overall": 5.0
       }
     }
