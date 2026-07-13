@@ -4,7 +4,11 @@
 
 # import pytest
 from src.utils import clean_html
-from evaluation.metrics import compute_formatting, compute_heuristics, compute_readability
+from evaluation.metrics import (
+    compute_formatting,
+    compute_heuristics,
+    compute_readability,
+)
 
 
 ##############################
@@ -20,14 +24,20 @@ def test_clean_html():
 
     assert result == "Hello World"
 
+
 class TestComputeFormatting:
     def test_clean_english_response(self):
-        result = compute_formatting("What is recursion?", "Recursion is when a function calls itself.")
+        result = compute_formatting(
+            "What is recursion?", "Recursion is when a function calls itself."
+        )
         assert result["is_non_english"] == 0
         assert result["formatting_error_rate"] == 0.0
 
     def test_detects_chinese(self):
-        result = compute_formatting("What is recursion?", "递归是一种函数调用自身的编程技术。这是一个很好的例子。")
+        result = compute_formatting(
+            "What is recursion?",
+            "递归是一种函数调用自身的编程技术。这是一个很好的例子。",
+        )
         assert result["is_non_english"] == 1
         assert result["formatting_error_rate"] > 0
 
