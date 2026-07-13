@@ -176,7 +176,7 @@ def compute_heuristics(text: str) -> dict:
     jargon_count = sum(1 for w in words if w.lower().strip(".,;:") in JARGON_WORDS)
     jargon_density = round(jargon_count / word_count if word_count > 0 else 0, 4)
 
-    text_clean = re.sub(r'[^\w\s]', ' ', text_lower)  # replace punctuation with space
+    text_clean = re.sub(r"[^\w\s]", " ", text_lower)  # replace punctuation with space
     example_score = sum(1 for signal in EXAMPLE_SIGNALS if signal in text_clean)
     analogy_score = sum(1 for signal in ANALOGY_SIGNALS if signal in text_clean)
     definition_first = int(
