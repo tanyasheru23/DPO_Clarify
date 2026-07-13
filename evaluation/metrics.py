@@ -175,12 +175,14 @@ def compute_heuristics(text: str) -> dict:
     avg_sentence_length = round(word_count / len(sentences) if sentences else 0, 2)
     jargon_count = sum(1 for w in words if w.lower().strip(".,;:") in JARGON_WORDS)
     jargon_density = round(jargon_count / word_count if word_count > 0 else 0, 4)
-    example_score = sum(1 for signal in EXAMPLE_SIGNALS if signal in text_lower)
-    analogy_score = sum(1 for signal in ANALOGY_SIGNALS if signal in text_lower)
+
+    text_clean = re.sub(r'[^\w\s]', ' ', text_lower)  # replace punctuation with space
+    example_score = sum(1 for signal in EXAMPLE_SIGNALS if signal in text_clean)
+    analogy_score = sum(1 for signal in ANALOGY_SIGNALS if signal in text_clean)
     definition_first = int(
         any(re.match(pattern, text) for pattern in DEFINITION_PATTERNS)
     )
-    has_steps = int(bool(re.search(r"\b(1\.|step 1|first,|firstly)", text_lower)))
+    has_steps = int(bool(re.search(r"\b(1\.|step 1|first,|firstly)", text_clean)))
 
     return {
         "word_count": word_count,
