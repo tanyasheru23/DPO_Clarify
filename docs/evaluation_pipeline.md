@@ -313,15 +313,44 @@ Economics
 
 ---
 
-# Future Improvements
+## Completed
 
-Planned additions include:
+✅ Designed a benchmark consisting of 50 educational prompts spanning multiple academic domains.
+✅ Implemented an automated response generation pipeline using Qwen2.5-7B-Instruct.
+✅ Configured deterministic inference (do_sample=False) for reproducible evaluation.
+✅ Recorded generation metadata
+✅ Implemented automated evaluation metrics
+✅ Generated the baseline evaluation for **Qwen2.5-7B-Instruct**.
 
-- Human evaluation
-- Pairwise preference comparison
-- Win-rate evaluation
-- Confidence calibration
-- Response consistency across multiple decoding strategies
+### Baseline Results
+
+| Metric | Result |
+|---------|-------:|
+| Readability (Flesch) | 55.0 |
+| Grade Level | 9.66 |
+| BERTScore | 0.70 |
+| Overall Judge Score | 3.77 / 5 |
+| Formatting Error Rate | 11.3% |
+| Non-English Ratio | 14.9% |
+
+### Observations
+
+The baseline model demonstrates strong factual knowledge and generally produces readable explanations. However, several recurring issues were identified:
+
+- Occasional multilingual artifacts (e.g., Chinese prefixes)
+- Formatting inconsistencies
+- Inconsistent response lengths
+- Some incomplete or poorly aligned generations
+
+These observations establish a baseline against which the SFT and DPO models will be compared.
+
+##Next Milestones
+
+⏳ Supervised Fine-Tuning (SFT)
+⏳ Evaluate SFT model
+⏳ Direct Preference Optimization (DPO)
+⏳ Evaluate DPO model
+⏳ Final comparison (Base vs SFT vs DPO)
 
 ---
 
