@@ -315,12 +315,12 @@ Economics
 
 ## Completed
 
-✅ Designed a benchmark consisting of 50 educational prompts spanning multiple academic domains.
-✅ Implemented an automated response generation pipeline using Qwen2.5-7B-Instruct.
-✅ Configured deterministic inference (do_sample=False) for reproducible evaluation.
-✅ Recorded generation metadata
-✅ Implemented automated evaluation metrics
-✅ Generated the baseline evaluation for **Qwen2.5-7B-Instruct**.
+- ✅ Designed a benchmark consisting of 50 educational prompts spanning multiple academic domains.
+- ✅ Implemented an automated response generation pipeline using Qwen2.5-7B-Instruct.
+- ✅ Configured deterministic inference (do_sample=False) for reproducible evaluation.
+- ✅ Recorded generation metadata
+- ✅ Implemented automated evaluation metrics
+- ✅ Generated the baseline evaluation for **Qwen2.5-7B-Instruct**.
 
 ### Baseline Results
 
@@ -346,11 +346,11 @@ These observations establish a baseline against which the SFT and DPO models wil
 
 ##Next Milestones
 
-⏳ Supervised Fine-Tuning (SFT)
-⏳ Evaluate SFT model
-⏳ Direct Preference Optimization (DPO)
-⏳ Evaluate DPO model
-⏳ Final comparison (Base vs SFT vs DPO)
+- ⏳ Supervised Fine-Tuning (SFT)
+- ⏳ Evaluate SFT model
+- ⏳ Direct Preference Optimization (DPO)
+- ⏳ Evaluate DPO model
+- ⏳ Final comparison (Base vs SFT vs DPO)
 
 ---
 
