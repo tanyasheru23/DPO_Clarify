@@ -36,7 +36,7 @@ Direct Preference Optimization (DPO) can instead learn:
 - [x] Dataset collection
 - [x] Dataset engineering & auditing
 - [x] CI pipeline (ruff + pytest)
-- [ ] Baseline evaluation
+- [x] Baseline evaluation
 - [ ] Mistral-7B + QLoRA training
 - [ ] DPO training
 - [ ] Post-training evaluation
@@ -73,17 +73,39 @@ DPO_Clarify_Dataset/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml
-
+|
+├── data/
+│   ├── dataset_hf/
+│   ├── parts/
+│   ├── dataset.jsonl
+│   └── eval_prompts.json
+|
+├── docs/
+│   ├── dataset_engineering.md
+│   └── evaluation_pipeline.md
+|
+├── evaluation/
+│   ├── compare.py
+│   ├── evaluate.py
+│   ├── generate.py
+│   ├── judge.py
+│   └── metrics.py
+│
+├── results/
+│   ├── base_eval.json
+│   └── base_responses.json
+|
 ├── src/
 │   ├── stack_exchange_pairs.py
 │   ├── eli5_pairs.py
 │   ├── synthetic_pairs.py
 │   ├── save_dataset.py
 │   └── utils.py
-
+│ 
 ├── tests/
 │   └── test_pipeline.py
-
+│
+├── pytest.ini
 ├── build_dataset.py
 ├── config.py
 ├── requirements.txt
@@ -170,3 +192,19 @@ A pull request must pass all checks before merging.
 During dataset construction, I redesigned the ingestion pipeline to load domain-specific StackExchange subsets, instrumented rejection statistics, and diagnosed a hyperparameter bottleneck that was filtering out 99.8% of candidate examples.
 
 Read more: [Dataset Engineering Notes](docs/dataset_engineering.md)
+
+## Evaluation Framework
+
+Implemented a reproducible evaluation pipeline to benchmark educational explanations across multiple dimensions, including readability, semantic quality, instructional effectiveness, generation latency, and output consistency. The framework establishes quantitative baselines for comparing the Base, SFT, and DPO models.
+
+Read more: [Evaluation Methodology](docs/evaluation.md)
+
+## Experiment Log
+
+| Date | Experiment | Status |
+|------|------------|--------|
+| 2026-07 | Designed evaluation benchmark (50 prompts) | ✅ |
+| 2026-07 | Implemented response generation pipeline | ✅ |
+| 2026-07 | Baseline evaluation (Qwen2.5-7B-Instruct) | ✅ |
+| 2026-07 | SFT evaluation | ⏳ |
+| 2026-07 | DPO evaluation | ⏳ |
