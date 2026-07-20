@@ -344,7 +344,7 @@ The baseline model demonstrates strong factual knowledge and generally produces 
 
 These observations establish a baseline against which the SFT and DPO models will be compared.
 
-##Next Milestones
+## Next Milestones
 
 - ⏳ Supervised Fine-Tuning (SFT)
 - ⏳ Evaluate SFT model
