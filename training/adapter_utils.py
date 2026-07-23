@@ -19,7 +19,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from training_config import BNB_CONFIG  # noqa: E402
+from training.training_config import BNB_CONFIG  # noqa: E402
 
 
 def get_bnb_config() -> BitsAndBytesConfig:

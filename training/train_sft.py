@@ -7,15 +7,15 @@ Usage (from project root):
     python -m training.train_sft
 """
 
+import json
 import sys
 from pathlib import Path
 
 from datasets import load_from_disk
 from trl import SFTConfig, SFTTrainer
-from trl.trainer import DataCollatorForCompletionOnlyLM
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from config import BASE_MODEL, SFT_MODEL_DIR  # noqa: E402
+from config import BASE_MODEL, SFT_MODEL_DIR, EVAL_PROMPTS_PATH  # noqa: E402
 from training.training_config import (  # noqa: E402
     DATASET_HF_DIR,
     MAX_SEQ_LENGTH,
@@ -30,19 +30,42 @@ from training.adapter_utils import (  # noqa: E402
     save_adapter,
 )
 
-# Must match the assistant-turn marker in Qwen's ChatML template exactly,
-# so DataCollatorForCompletionOnlyLM knows where the loss-relevant tokens
-# start (loss is masked on everything before this, i.e. system + user turns).
-RESPONSE_TEMPLATE = "<|im_start|>assistant\n"
+
+def check_no_eval_overlap(train_dataset):
+    """Guard against silent train/eval prompt overlap before burning GPU hours.
+    Must run BEFORE build_prompt_completion reformats the 'prompt' column,
+    since eval_prompts.json stores raw (non-templated) prompt strings."""
+    eval_prompts = {
+        p["prompt"] for p in json.loads(Path(EVAL_PROMPTS_PATH).read_text(encoding="utf-8"))
+    }
+    train_prompts = set(train_dataset["prompt"])
+    overlap = eval_prompts & train_prompts
+    if overlap:
+        raise ValueError(
+            f"{len(overlap)} eval prompts found in SFT training data — "
+            "this will invalidate SFT vs baseline comparisons. Aborting."
+        )
+    print("✓ No overlap between eval prompts and training data")
 
 
-def build_text(example, tokenizer):
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": example["prompt"]},
-        {"role": "assistant", "content": example["chosen"]},
-    ]
-    example["text"] = tokenizer.apply_chat_template(messages, tokenize=False)
+def build_prompt_completion(example, tokenizer):
+    """
+    Reformat into the columns SFTConfig(completion_only_loss=True) expects:
+      prompt     -> chat-templated string ending right where the assistant
+                    turn should start (add_generation_prompt=True) — matches
+                    evaluation/generate.py's formatting
+      completion -> raw chosen response text (loss is computed on this only;
+                    the prompt tokens are automatically masked out)
+    """
+    example["prompt"] = tokenizer.apply_chat_template(
+        [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": example["prompt"]},
+        ],
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+    example["completion"] = example["chosen"]
     return example
 
 
@@ -54,44 +77,27 @@ def main():
 
     print(f"Loading dataset: {DATASET_HF_DIR}")
     dataset = load_from_disk(str(DATASET_HF_DIR))
-    train_dataset = dataset["train"].map(
-        lambda ex: build_text(ex, tokenizer),
-        remove_columns=[c for c in dataset["train"].column_names if c not in ("prompt", "chosen")],
+    train_dataset = dataset["train"].remove_columns(
+        [c for c in dataset["train"].column_names if c not in ("prompt", "chosen")]
     )
 
-    # Sanity check: none of the eval prompts should be in the training set.
-    # Cheap guard against silent train/eval overlap before burning GPU hours.
-    import json
-    from config import EVAL_PROMPTS_PATH
+    # Check overlap BEFORE reformatting 'prompt' into its chat-templated form
+    check_no_eval_overlap(train_dataset)
 
-    eval_prompts = {p["prompt"] for p in json.loads(Path(EVAL_PROMPTS_PATH).read_text(encoding="utf-8"))}
-    train_prompts = set(train_dataset["prompt"])
-    overlap = eval_prompts & train_prompts
-    if overlap:
-        raise ValueError(
-            f"{len(overlap)} eval prompts found in SFT training data — "
-            "this will invalidate SFT vs baseline comparisons. Aborting."
-        )
-    print("✓ No overlap between eval prompts and training data")
-
-    collator = DataCollatorForCompletionOnlyLM(
-        response_template=RESPONSE_TEMPLATE,
-        tokenizer=tokenizer,
-    )
+    train_dataset = train_dataset.map(lambda ex: build_prompt_completion(ex, tokenizer))
 
     sft_config = SFTConfig(
         **SFT_ARGS,
-        max_seq_length=MAX_SEQ_LENGTH,
-        dataset_text_field="text",
-        packing=False,  # packing + completion-only loss masking don't mix well
+        max_length=MAX_SEQ_LENGTH,
+        completion_only_loss=True,  # loss computed on 'completion' only, prompt tokens masked
+        packing=False,              # packing is incompatible with completion-only loss
     )
 
     trainer = SFTTrainer(
         model=model,
         args=sft_config,
         train_dataset=train_dataset,
-        data_collator=collator,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     print("Starting SFT training...")

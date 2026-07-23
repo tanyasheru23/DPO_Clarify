@@ -85,7 +85,7 @@ DPO_LORA_CONFIG = dict(
 # ─────────────────────────────────────────────
 SFT_ARGS = dict(
     output_dir=str(LOGS_DIR / "sft-run"),
-    num_train_epochs=3,
+    num_train_epochs=2,
     per_device_train_batch_size=1,
     gradient_accumulation_steps=8,
     learning_rate=5e-5,
@@ -94,7 +94,8 @@ SFT_ARGS = dict(
     optim="paged_adamw_8bit",
     gradient_checkpointing=True,
     logging_steps=10,
-    save_strategy="epoch",
+    save_strategy="steps",
+    save_steps=25,
     report_to=[],
 )
 
@@ -109,7 +110,7 @@ DPO_MAX_LENGTH = 1024
 
 DPO_ARGS = dict(
     output_dir=str(LOGS_DIR / "dpo-run"),
-    num_train_epochs=3,
+    num_train_epochs=2,
     per_device_train_batch_size=1,
     gradient_accumulation_steps=8,
     learning_rate=5e-5,
@@ -118,7 +119,8 @@ DPO_ARGS = dict(
     optim="paged_adamw_8bit",
     gradient_checkpointing=True,
     logging_steps=10,
-    save_strategy="epoch",
+    save_strategy="steps",
+    save_steps=25,
     report_to=[],
 )
 
