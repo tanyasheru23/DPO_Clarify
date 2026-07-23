@@ -37,6 +37,7 @@ Direct Preference Optimization (DPO) can instead learn:
 - [x] Dataset engineering & auditing
 - [x] CI pipeline (ruff + pytest)
 - [x] Baseline evaluation
+- [x] Evaluation pipeline validation
 - [ ] Mistral-7B + QLoRA training
 - [ ] DPO training
 - [ ] Post-training evaluation

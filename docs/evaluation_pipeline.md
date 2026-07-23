@@ -326,23 +326,24 @@ Economics
 
 | Metric | Result |
 |---------|-------:|
-| Readability (Flesch) | 55.0 |
-| Grade Level | 9.66 |
-| BERTScore | 0.70 |
-| Overall Judge Score | 3.77 / 5 |
-| Formatting Error Rate | 11.3% |
-| Non-English Ratio | 14.9% |
+| Flesch Reading Ease | **55.29** |
+| Grade Level | **10.22** |
+| Average Word Count | **146.8** |
+| BERTScore | **0.713** |
+| Overall LLM-as-Judge | **4.83 / 5** |
+| Formatting Error Rate | **0.0%** |
+| Non-English Ratio | **0.1%** |
 
-### Observations
+## Observations
 
-The baseline model demonstrates strong factual knowledge and generally produces readable explanations. However, several recurring issues were identified:
+The corrected evaluation pipeline demonstrates that the baseline model already produces clear, well-structured educational explanations with strong instruction-following performance.
 
-- Occasional multilingual artifacts (e.g., Chinese prefixes)
-- Formatting inconsistencies
-- Inconsistent response lengths
-- Some incomplete or poorly aligned generations
+Key observations include:
 
-These observations establish a baseline against which the SFT and DPO models will be compared.
+- High overall educational quality (**4.83/5**) according to the LLM-as-a-Judge rubric.
+- Responses consistently include examples and beginner-friendly explanations.
+- Proper chat template formatting eliminated malformed outputs and multilingual artifacts observed during early development.
+- The baseline establishes a reliable reference point for evaluating improvements introduced by SFT and DPO.
 
 ## Next Milestones
 
@@ -365,3 +366,12 @@ Rather than measuring only lexical overlap, the framework focuses on the qualiti
 - Accessibility
 - Consistency
 - Educational effectiveness
+
+
+## Engineering Notes
+
+During development, the evaluation pipeline was validated to ensure responses were generated using the tokenizer's official chat template.
+
+An incorrectly specified `add_generation_prompt` argument initially prevented the assistant generation marker from being appended, leading to malformed outputs.
+
+After correcting the prompt formatting, response quality and instruction-following behavior improved substantially. All reported baseline metrics were generated using the corrected evaluation pipeline.

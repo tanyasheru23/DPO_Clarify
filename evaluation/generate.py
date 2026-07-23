@@ -84,9 +84,11 @@ def generate_response(
         {
             "role": "system",
             "content": (
-                "You are an educational AI assistant."
-                "Answer the given question clearly, simply(easy to understand) and accurately."
-                "Limit your response to about 120-150 words."
+                """
+                You are a helpful educational AI assistant.
+                Provide a clear, accurate, and beginner-friendly explanation in approximately 120-150 words. 
+                Use simple language and include an example or analogy where appropriate.
+                """
             ),
         },
         {
@@ -98,7 +100,7 @@ def generate_response(
     text = tokenizer.apply_chat_template(
         messages,
         tokenize=False,
-        add_generation_promt=True,
+        add_generation_prompt=True,
     )
 
     inputs = tokenizer(
