@@ -1,7 +1,3 @@
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
-
-MODELS_DIR = "./models"
-
 """
 training_config.py
 ===================
@@ -20,7 +16,12 @@ from pathlib import Path
 # Make root config.py importable when this file is run from training/
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from config import BASE_MODEL, SFT_MODEL_DIR, DPO_MODEL_DIR, OUTPUT_HF_DIR  # noqa: E402
+from config import SFT_MODEL_DIR, DPO_MODEL_DIR, OUTPUT_HF_DIR  # noqa: E402
+
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+
+MODELS_DIR = "./models"
+
 
 # ─────────────────────────────────────────────
 # PATHS
