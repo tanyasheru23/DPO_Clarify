@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "category": "AI",
+    "prompt": "What is reinforcement learning and how is it different from supervised learning?",
+    "response": "Imagine you're playing a video game where you have to navigate through a maze to find treasure. Reinforcement learning is like teaching a computer to play this game by itself. The computer tries different paths, gets rewards for finding treasure (positive reinforcement), and penalties for hitting walls (negative reinforcement). Over time, it learns which actions lead to more rewards and becomes better at navigating the maze.\n\nSupervised learning, on the other hand, is like having a teacher who tells the computer exactly what to do in every situation. For example, if you show the computer pictures of cats and dogs, it can learn to recognize them because you've labeled each picture correctly. In reinforcement learning, there's no explicit labeling; the computer has to figure out the best actions based on its own experiences and rewards.",
+    "latency": 76.444,
+    "tokens_generated": 159,
+    "model": "sft-output"
+  },
+  {
+    "id": 2,
+    "category": "Computer Science",
+    "prompt": "What is dynamic programming and when should it be used?",
+    "response": "Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It's particularly useful when the problem has overlapping subproblems (i.e., the same subproblem may be encountered multiple times) and optimal substructure (i.e., an optimal solution can be constructed from optimal solutions of its subproblems). You should use dynamic programming when you have a problem that can be divided into smaller subproblems, and these subproblems overlap with each other. This approach helps avoid redundant calculations and significantly improves efficiency compared to naive recursive methods.",
+    "latency": 47.484,
+    "tokens_generated": 110,
+    "model": "sft-output"
+  },
+  {
+    "id": 3,
+    "category": "Computer Science",
+    "prompt": "Explain how hashing works without using technical jargon.",
+    "response": "Imagine you have a big box of toys, and you want to find a specific toy quickly. Hashing is like having a magical map that tells you exactly where each toy is stored in the box. When you want to find a toy, you just give the map (which is the hash function) the name of the toy, and it tells you which spot in the box to look. This way, you can find any toy really fast without having to search through the whole box!",
+    "latency": 41.585,
+    "tokens_generated": 98,
+    "model": "sft-output"
+  },
+  {
+    "id": 4,
+    "category": "Computer Science",
+    "prompt": "What is the difference between a process and a thread?",
+    "response": "Imagine you're baking cookies. A process is like having a recipe book that tells you how to make cookies. It's a complete set of instructions for one task. A thread is like someone following those instructions in the kitchen. They're doing the work step-by-step. So, a process is the plan (recipe), while threads are the people actually making the cookies according to that plan.",
+    "latency": 41.701,
+    "tokens_generated": 79,
+    "model": "sft-output"
+  },
+  {
+    "id": 5,
+    "category": "Statistics",
+    "prompt": "Explain the difference between correlation and causation.",
+    "response": "Imagine you have two friends who both love ice cream and also both love playing video games. You notice that whenever one of them plays more video games, the other tends to eat more ice cream. This is a correlation: when one thing happens, another thing often happens at the same time. But just because they happen together doesn't mean one causes the other. Maybe they both love ice cream and video games, so they naturally spend more time together. Or maybe they're both stressed from school and turn to comfort food and entertainment. So while there's a connection between their ice cream and video game habits, we can't say for sure that one causes the other. That's what we mean by correlation does not imply causation.",
+    "latency": 80.959,
+    "tokens_generated": 147,
+    "model": "sft-output"
+  },
+  {
+    "id": 6,
+    "category": "Statistics",
+    "prompt": "Why is standard deviation useful?",
+    "response": "Imagine you're trying to measure how far people are from the center of a group. Standard deviation is like measuring the average distance of each person from the center. It helps us understand how spread out or close together the data points are. If the standard deviation is small, it means most people are close to the center. If it's large, people are more spread out. This is useful because it gives us a quick idea of the variability in our data without having to look at every single number.",
+    "latency": 53.594,
+    "tokens_generated": 101,
+    "model": "sft-output"
+  },
+  {
+    "id": 7,
+    "category": "Statistics",
+    "prompt": "What is Bayes' theorem and why is it important?",
+    "response": "Imagine you have a bag of marbles, some red and some blue. You want to know the chance that a marble drawn at random is red. Bayes' theorem helps you update this probability based on new information. For example, if you learn that most of the marbles are actually blue, you can adjust your guess about the red ones. It's important because it allows us to make better predictions and decisions by incorporating new evidence into our understanding.",
+    "latency": 46.981,
+    "tokens_generated": 92,
+    "model": "sft-output"
+  },
+  {
+    "id": 8,
+    "category": "Mathematics",
+    "prompt": "Why do we need logarithms?",
+    "response": "Imagine you're trying to measure how loud a sound is. If you use a regular scale, like from 1 to 100, it's hard to tell the difference between very quiet sounds and very loud ones. But if you use a logarithmic scale, like the decibel scale, you can easily compare the quietest whispers with the loudest noises. Logarithms help us deal with really big or really small numbers in a way that makes sense to our brains.",
+    "latency": 42.094,
+    "tokens_generated": 98,
+    "model": "sft-output"
+  },
+  {
+    "id": 9,
+    "category": "Physics",
+    "prompt": "Why does entropy tend to increase?",
+    "response": "Imagine you have a box of toys. At first, they're all neatly arranged in order. But as time passes, they start to get mixed up and scattered around. This is similar to what happens with entropy. Entropy is like a measure of disorder or randomness. In nature, things tend to move from more organized states to less organized ones over time. For example, heat naturally flows from hotter objects to cooler ones until everything reaches the same temperature. This process increases overall disorder, which we call entropy.",
+    "latency": 44.348,
+    "tokens_generated": 103,
+    "model": "sft-output"
+  },
+  {
+    "id": 10,
+    "category": "Biology",
+    "prompt": "How does DNA store genetic information, and how is that information used to build proteins?",
+    "response": "Imagine DNA as a long string of beads, where each bead represents a piece of information. These beads come in four different colors: A (Adenine), T (Thymine), C (Cytosine), and G (Guanine). The order of these beads along the string is like a recipe for building proteins. Proteins are like tiny machines inside our cells that do important jobs. To make a protein, the cell reads this recipe from the DNA string, copying it into a similar string called messenger RNA (mRNA). This mRNA then goes to a special factory in the cell called the ribosome, which uses the information to build the protein piece by piece.",
+    "latency": 60.518,
+    "tokens_generated": 139,
+    "model": "sft-output"
+  },
+  {
+    "id": 11,
+    "category": "Biology",
+    "prompt": "Explain how vaccines train the immune system.",
+    "response": "Imagine your immune system is like a library with many books. Each book represents a different type of germ (like viruses or bacteria). When you get sick, your body has to find the right book in the library to fight off that specific germ. Vaccines work by showing your immune system a \"preview\" of what these germs look like without actually making you sick. This way, when you're exposed to the real germ later on, your immune system already knows how to find the right book in the library and quickly fights it off.",
+    "latency": 44.549,
+    "tokens_generated": 109,
+    "model": "sft-output"
+  },
+  {
+    "id": 12,
+    "category": "Biology",
+    "prompt": "Why do humans need sleep?",
+    "response": "Sleep is a natural state of rest that allows our bodies and minds to recover from daily activities. It helps maintain physical health, cognitive function, emotional well-being, and overall quality of life. Sleep also plays a crucial role in memory consolidation, learning, and problem-solving.",
+    "latency": 24.543,
+    "tokens_generated": 55,
+    "model": "sft-output"
+  },
+  {
+    "id": 13,
+    "category": "Chemistry",
+    "prompt": "Why does salt dissolve in water?",
+    "response": "Salt dissolves in water because of the attraction between the ions in the salt and the polar water molecules. The positive sodium ions in the salt are attracted to the negative oxygen atoms in the water molecules, while the negative chloride ions in the salt are attracted to the positive hydrogen atoms in the water molecules. This attraction causes the salt to break apart into its constituent ions, which then become surrounded by water molecules. As a result, the salt is said to be dissolved in the water.",
+    "latency": 39.735,
+    "tokens_generated": 97,
+    "model": "sft-output"
+  },
+  {
+    "id": 14,
+    "category": "Software Engineering",
+    "prompt": "Why are unit tests important in software development?",
+    "response": "Imagine you're building a house. You want to make sure each room is built correctly before moving on to the next one. Unit tests are like checking if each room is properly constructed before finishing it. They help ensure that small parts of your code work as expected, so when you put everything together, it all works smoothly.",
+    "latency": 28.317,
+    "tokens_generated": 66,
+    "model": "sft-output"
+  },
+  {
+    "id": 15,
+    "category": "Software Engineering",
+    "prompt": "Explain version control to someone who has never programmed before.",
+    "response": "Imagine you're working on a big puzzle with your friends. You all start putting pieces together, but sometimes you want to go back to how it looked earlier or try out different arrangements. Version control is like having a magical notebook where you write down every step of your puzzle-solving process. Whenever you finish a section or make a change, you jot it down in the notebook. This way, if you need to revisit any part of your work later, you can easily see what you did and when. It's also helpful if you want to share your progress with others or collaborate on the puzzle together.",
+    "latency": 52.684,
+    "tokens_generated": 121,
+    "model": "sft-output"
+  },
+  {
+    "id": 16,
+    "category": "General Reasoning",
+    "prompt": "Explain the concept of opportunity cost using a simple daily-life scenario.",
+    "response": "Imagine you have $10 to spend on snacks or books. If you choose to buy snacks, you can't use that money for books. The value of the books you could have bought is the opportunity cost of buying snacks.",
+    "latency": 24.053,
+    "tokens_generated": 47,
+    "model": "sft-output"
+  },
+  {
+    "id": 17,
+    "category": "General Reasoning",
+    "prompt": "Explain the Pareto Principle (80/20 rule) with practical examples.",
+    "response": "Imagine you have a pizza shop. You sell 100 pizzas in a day. According to the Pareto Principle, 80% of your sales might come from just 20% of your customers. For example, if 20 regular customers buy 80 pizzas, while the other 80 customers only buy 20 pizzas each, that's how the principle works. It's not always exactly 80/20, but it's a good way to think about how resources or effort can be concentrated on the most important things.",
+    "latency": 52.891,
+    "tokens_generated": 116,
+    "model": "sft-output"
+  },
+  {
+    "id": 18,
+    "category": "Chemistry",
+    "prompt": "Why do chemical reactions release or absorb energy? What is happening at the atomic level?",
+    "response": "Imagine you have a toy car that needs batteries to run. The batteries store energy, which is released when the car moves. Similarly, in chemistry, atoms and molecules can store energy. When they react, this stored energy is either released (like a battery powering a toy car) or absorbed (like needing more energy to start a toy car). At the atomic level, it's all about how these tiny particles share and transfer energy.",
+    "latency": 43.6,
+    "tokens_generated": 88,
+    "model": "sft-output"
+  },
+  {
+    "id": 19,
+    "category": "Chemistry",
+    "prompt": "Why do some substances conduct electricity while others do not?",
+    "response": "Imagine you have a garden hose with water flowing through it. The water represents electrons moving through a conductor. If the hose is wide and smooth, water flows easily, just like how free electrons can move in metals. Metals have lots of free electrons that can flow easily, so they conduct electricity well. But if the hose is narrow or has many bumps and holes, water flow gets blocked, similar to how insulators don't allow easy movement of electrons. Insulators have few or no free electrons, so they don't conduct electricity well.",
+    "latency": 76.162,
+    "tokens_generated": 109,
+    "model": "sft-output"
+  },
+  {
+    "id": 20,
+    "category": "General Reasoning",
+    "prompt": "Teach me what compound interest is as if I were a high school student.",
+    "response": "Imagine you have a piggy bank where you put in $100 every year. If it just sits there, that's simple interest - you only get the same amount back each time. But with compound interest, it's like magic! You not only earn money on your original $100, but also on any interest you've already earned. So, if the bank gives you 5% interest each year, after one year you'd have $105. In the second year, you earn 5% on $105, so you get more than before. This keeps happening, and over time, your money grows faster and faster because you're earning interest on top of interest. It's like a snowball rolling down a hill - the bigger it gets, the faster it rolls!",
+    "latency": 116.008,
+    "tokens_generated": 166,
+    "model": "sft-output"
+  },
+  {
+    "id": 21,
+    "category": "Computer Science",
+    "prompt": "What is recursion? Explain it in a way that actually makes sense.",
+    "response": "Imagine you're trying to solve a puzzle, but the puzzle itself is made up of smaller puzzles. Each of those smaller puzzles is also made up of even smaller puzzles, and so on. Recursion is like solving these puzzles one by one, starting from the biggest puzzle and breaking it down into smaller and smaller pieces until you reach the smallest pieces, which you can solve easily. Once you've solved all the small pieces, you work your way back up, putting everything together to solve the original big puzzle.",
+    "latency": 48.274,
+    "tokens_generated": 103,
+    "model": "sft-output"
+  },
+  {
+    "id": 22,
+    "category": "Computer Science",
+    "prompt": "How does a binary search actually find an element? Walk me through the intuition.",
+    "response": "Imagine you're playing a guessing game with a friend who's thinking of a number between 1 and 100. You want to guess the number as quickly as possible. Here's how a binary search works:\n\n1. **Start in the middle**: First, you guess the number in the middle of the range, which is 50.\n2. **Check if it's right or wrong**: If your friend says \"higher,\" you know the number is between 51 and 100. If they say \"lower,\" you know it's between 1 and 49.\n3. **Repeat the process**: Now, you guess the middle of the new range. For example, if the number is higher than 50, you guess 75 next. If it's lower, you guess 25.\n4. **Keep narrowing down**: You keep doing this, always guessing the middle of the current range, until you find the exact number.\n\nThis",
+    "latency": 100.151,
+    "tokens_generated": 200,
+    "model": "sft-output"
+  },
+  {
+    "id": 23,
+    "category": "Computer Science",
+    "prompt": "What is Big O notation and why do programmers care about it?",
+    "response": "Big O notation is a way of describing the performance of an algorithm in terms of how its running time or space requirements grow as the input size increases. It's used to analyze and compare algorithms based on their efficiency. Programmers care about Big O notation because it helps them choose the most efficient algorithm for a given task, optimize code, and understand the scalability of their programs.",
+    "latency": 37.477,
+    "tokens_generated": 76,
+    "model": "sft-output"
+  },
+  {
+    "id": 24,
+    "category": "Computer Science",
+    "prompt": "How does a hash map work internally? Where does the value actually go?",
+    "response": "Imagine you have a big box of toys, but instead of putting them in order by size or color, you decide to use a special way to find them quickly. You write down the name of each toy on a piece of paper and then put that paper in a folder with the same name. So if you want to find a toy named \"Teddy Bear,\" you just look for the folder labeled \"Teddy Bear\" and there it is! In a hash map, the folders are called \"buckets,\" and the names are called \"keys.\" When you want to store something (like a toy), you first find its key (the name). Then, you calculate where to put it using a special formula (hash function). This formula tells you which bucket to use. If two things have the same key, they go into the same bucket, but don't worry, there's a way to handle this (called collision resolution). To find something, you do the same thing: use the key",
+    "latency": 94.59,
+    "tokens_generated": 200,
+    "model": "sft-output"
+  },
+  {
+    "id": 25,
+    "category": "Computer Science",
+    "prompt": "What is the difference between a stack and a queue? When would you use each?",
+    "response": "A stack is a data structure that follows the Last In First Out (LIFO) principle, meaning the last element added to the stack will be the first one to be removed. A queue, on the other hand, follows the First In First Out (FIFO) principle, where the first element added to the queue will be the first one to be removed. You would use a stack when you need to keep track of the order in which items were added, such as in function calls or parsing expressions. You would use a queue when you need to process items in the order they were received, such as in a job scheduler or message passing system.",
+    "latency": 67.516,
+    "tokens_generated": 132,
+    "model": "sft-output"
+  },
+  {
+    "id": 26,
+    "category": "Computer Science",
+    "prompt": "Why do we need pointers in programming? What problem do they solve?",
+    "response": "Imagine you're playing a game where you have a treasure chest (a variable), and you want to move it around the room (change its location). In most games, you can only move the treasure chest by picking it up and putting it somewhere else. But what if you want to move the treasure chest without actually moving it? That's where pointers come in! A pointer is like a special map that tells you where the treasure chest is located. Instead of moving the treasure chest itself, you can use the map to find it and then move it to a new spot. This way, you can change where the treasure chest is without having to pick it up every time. Pointers are useful because they allow you to manipulate data indirectly, which can make your code more efficient and easier to manage.",
+    "latency": 70.253,
+    "tokens_generated": 161,
+    "model": "sft-output"
+  },
+  {
+    "id": 27,
+    "category": "Computer Science",
+    "prompt": "I keep hearing about linked lists vs arrays but I don't get when one is better than the other. Can you explain?",
+    "response": "Imagine you have a bunch of toy blocks. You can stack them up in a line (that's like an array), or you can connect them with strings so they're all hanging down (that's like a linked list). If you want to find a specific block in the middle of the stack, it's much faster if you're using strings because you can just follow the string to that block. But if you want to add or remove a block from the middle, it's easier with the stack because you just need to move the blocks around. So, which one is better depends on what you're trying to do!",
+    "latency": 59.158,
+    "tokens_generated": 126,
+    "model": "sft-output"
+  },
+  {
+    "id": 28,
+    "category": "Computer Science",
+    "prompt": "What is the difference between compiled and interpreted programming languages?",
+    "response": "Imagine you're baking a cake. In a compiled language, it's like writing down all the steps in a recipe book, then going into the kitchen and following those exact steps to bake the cake. You write everything out ahead of time, and when you're ready to make the cake, you just follow the instructions. In an interpreted language, it's more like having someone read the recipe to you as you go along. They tell you what to do next, and you follow their instructions step by step. So, with compiled languages, you have to do all the work upfront, but once you've done that, you can make lots of cakes quickly. With interpreted languages, you don't have to do as much work ahead of time, but each time you want to make a cake, you have to wait for someone to read the recipe to you first.",
+    "latency": 84.493,
+    "tokens_generated": 174,
+    "model": "sft-output"
+  },
+  {
+    "id": 29,
+    "category": "ML",
+    "prompt": "What is the intuition behind why gradient descent works?",
+    "response": "Imagine you're lost in a hilly landscape and you want to find the lowest point. Gradient descent is like taking small steps downhill, always moving in the direction where the ground slopes down most steeply. You keep doing this until you can't go any lower. This method helps you find the lowest point (or minimum) of the landscape, which in machine learning terms is finding the best parameters for your model.",
+    "latency": 40.24,
+    "tokens_generated": 84,
+    "model": "sft-output"
+  },
+  {
+    "id": 30,
+    "category": "ML",
+    "prompt": "Why does overfitting happen and why is it a problem?",
+    "response": "Imagine you're trying to learn a new language by memorizing every word and grammar rule in a book. You study so hard that you can recite the book perfectly, but when you try to speak with native speakers, you struggle because you haven't learned how to use the language naturally. This is like overfitting: your model learns the training data too well, capturing noise and details that don't generalize to new data. Overfitting is a problem because it leads to poor performance on unseen data, making your model less useful in real-world applications.",
+    "latency": 46.818,
+    "tokens_generated": 113,
+    "model": "sft-output"
+  },
+  {
+    "id": 31,
+    "category": "ML",
+    "prompt": "What is an embedding in machine learning? What does it actually represent?",
+    "response": "Imagine you have a bunch of words like \"apple,\" \"banana,\" and \"orange.\" In natural language processing (NLP), we want computers to understand these words better. An embedding is like giving each word a special code that captures its meaning. Think of it as a secret language where each word has its own unique set of numbers. These numbers help the computer understand similarities between words. For example, if you have two words that mean similar things, their codes will be close to each other. This way, the computer can learn from the context around words to understand what they mean.",
+    "latency": 49.406,
+    "tokens_generated": 119,
+    "model": "sft-output"
+  },
+  {
+    "id": 32,
+    "category": "ML",
+    "prompt": "How does the attention mechanism in transformers actually work?",
+    "response": "Imagine you're trying to understand a long story, but it's written in a language you don't know. The attention mechanism in transformers is like having a superpower that lets you focus on the most important parts of the story at any moment. It helps the model understand what's important by looking at different parts of the text simultaneously. Think of it as scanning through the story quickly to find the key details, then focusing on those parts to understand the whole picture better.",
+    "latency": 39.352,
+    "tokens_generated": 95,
+    "model": "sft-output"
+  },
+  {
+    "id": 33,
+    "category": "ML",
+    "prompt": "Why do neural networks need activation functions? What happens if you remove them?",
+    "response": "Imagine a neural network as a series of interconnected rooms, where each room is responsible for processing information. Activation functions act like the doors between these rooms. They control how much information flows from one room to another, allowing the network to learn complex patterns.\n\nIf you remove activation functions, it's like removing all the doors between the rooms. Information can flow freely without any control or transformation. This would make the network less effective at learning and processing data because it wouldn't be able to capture the nuances and complexities in the data.\n\nIn summary, activation functions are crucial because they enable the neural network to learn and process information effectively by controlling the flow and transformation of data through the network.",
+    "latency": 58.386,
+    "tokens_generated": 137,
+    "model": "sft-output"
+  },
+  {
+    "id": 34,
+    "category": "ML",
+    "prompt": "What is backpropagation and how does a neural network actually learn from it?",
+    "response": "Imagine you're trying to teach a robot to recognize cats in pictures. You show it lots of cat pictures and some non-cat pictures. The robot makes mistakes at first because it's learning. Backpropagation is like telling the robot \"no, that's not right\" when it gets something wrong. It adjusts its internal settings (weights) so it can do better next time. This way, over many tries, the robot learns to recognize cats more accurately.",
+    "latency": 40.438,
+    "tokens_generated": 93,
+    "model": "sft-output"
+  },
+  {
+    "id": 35,
+    "category": "ML",
+    "prompt": "What is the difference between supervised and unsupervised learning? Give me a real example of each.",
+    "response": "Supervised learning is when you have some data with labels (i.e., the correct answer), and you want to learn a function that maps the input to the output. For example, if you have a dataset of images of cats and dogs, and you know which ones are cats and which ones are dogs, you can use supervised learning to train a model to recognize cats and dogs in new images. Unsupervised learning is when you only have data without any labels, and you want to find patterns or structure in the data. For example, if you have a dataset of customer transactions, you might use unsupervised learning to cluster customers into groups based on their purchasing behavior.",
+    "latency": 58.986,
+    "tokens_generated": 137,
+    "model": "sft-output"
+  },
+  {
+    "id": 36,
+    "category": "Mathematics",
+    "prompt": "What is the intuition behind a derivative? What is it actually telling you?",
+    "response": "Imagine you're driving a car. The speedometer shows how fast you're going at any moment. That's like the derivative! It tells you how quickly something is changing. For example, if you're driving uphill, your speed might decrease even if you're still moving forward. The derivative would tell you exactly how much your speed is changing as you climb that hill.",
+    "latency": 33.247,
+    "tokens_generated": 75,
+    "model": "sft-output"
+  },
+  {
+    "id": 37,
+    "category": "Mathematics",
+    "prompt": "I never really understood what a logarithm is. Can you explain it in simple terms?",
+    "response": "Imagine you have a very long staircase with 100 steps. If you climb one step at a time, it takes you 100 steps to reach the top. But if you can jump two steps at a time, it only takes you 50 jumps to get there. In this case, the number of jumps (or \"logarithm\") is the exponent that tells you how many times you need to multiply the base (in this case, 2) to get the result (100). So, log<sub>2</sub>(100) = 6.64 because 2<sup>6.64</sup> ≈ 100. Logarithms help us understand how quickly numbers grow or shrink, especially when dealing with large values.",
+    "latency": 72.123,
+    "tokens_generated": 167,
+    "model": "sft-output"
+  },
+  {
+    "id": 38,
+    "category": "Mathematics",
+    "prompt": "What is the Central Limit Theorem and why does everyone in statistics care about it?",
+    "response": "Imagine you have a bag of marbles, and each marble represents a data point from a population. If you randomly pick a handful of marbles (a sample), the average color of those marbles might not perfectly match the average color of all the marbles in the bag. But if you keep picking handfuls and calculating their averages, as you get more and more samples, those averages will start to cluster around the true average color of all the marbles. This is the essence of the Central Limit Theorem: as you take larger and larger samples from a population, the distribution of their means will approach a normal distribution, regardless of the shape of the original population's distribution. This theorem is crucial because it allows us to make reliable statistical inferences about populations based on sample data, even when we don't know the exact shape of the population distribution.",
+    "latency": 74.42,
+    "tokens_generated": 173,
+    "model": "sft-output"
+  },
+  {
+    "id": 39,
+    "category": "Mathematics",
+    "prompt": "I keep hearing about Bayes theorem but the formula never clicks. Can you explain what it is actually doing?",
+    "response": "Imagine you have a bag of marbles: some are red, and some are blue. You want to know how likely it is that you'll draw a red marble from the bag. This is like the probability of an event happening, which we call P(event). Now, let's say someone tells you that there's a special condition: the bag has more red marbles than blue ones. This new information changes your estimate of drawing a red marble. This is where Bayes' Theorem comes in. It helps you update your initial guess (P(event)) based on this new information (the condition). In simple terms, Bayes' Theorem is a way to revise probabilities when you get new information.",
+    "latency": 62.298,
+    "tokens_generated": 144,
+    "model": "sft-output"
+  },
+  {
+    "id": 40,
+    "category": "Mathematics",
+    "prompt": "What does it actually mean for two things to be correlated? And why does correlation not mean causation?",
+    "response": "Imagine you have a bag of mixed candies. You notice that whenever you pick a red candy, there's often a blue one nearby. This doesn't mean picking a red candy causes a blue one to appear; it just means they tend to show up together. That's what correlation is: when two things happen together more often than by chance. Correlation doesn't mean one thing causes the other because there could be other reasons or factors at play. For example, both red and blue candies might be more likely to be picked from the same spot in the bag.",
+    "latency": 49.312,
+    "tokens_generated": 114,
+    "model": "sft-output"
+  },
+  {
+    "id": 41,
+    "category": "Mathematics",
+    "prompt": "What is a p-value? Every explanation I find is confusing.",
+    "response": "Imagine you're playing a game where you flip a coin to see if it's fair (50% heads, 50% tails). You flip it 100 times and get 60 heads. Is this just random chance, or does it suggest the coin might be biased towards heads? The p-value helps answer that question. It tells you how likely it is to get results as extreme as what you observed (60 heads out of 100 flips), assuming the coin is actually fair. If the p-value is very low (like less than 5%), it suggests the coin might not be fair, because getting such an extreme result with a fair coin is unlikely.",
+    "latency": 59.365,
+    "tokens_generated": 142,
+    "model": "sft-output"
+  },
+  {
+    "id": 42,
+    "category": "Mathematics",
+    "prompt": "What is the intuition behind eigenvectors and eigenvalues?",
+    "response": "Imagine you have a magical box that can transform any vector into another vector. This transformation is represented by a matrix. Eigenvectors are special vectors that, when transformed by this magical box, only get stretched or squished but not rotated. The amount they get stretched or squished is called the eigenvalue. So, if you put an eigenvector into the magical box, it comes out as a scaled version of itself. This scaling factor is the eigenvalue. Think of it like this: if you have a rubber band (an eigenvector) and you stretch it, the length it gets stretched by is the eigenvalue.",
+    "latency": 53.323,
+    "tokens_generated": 129,
+    "model": "sft-output"
+  },
+  {
+    "id": 43,
+    "category": "Mathematics",
+    "prompt": "What is a confidence interval? What does it actually mean when someone says 95% confidence interval?",
+    "response": "Imagine you're trying to guess how many jelly beans are in a jar. You take a few samples and calculate the average number of jelly beans per sample. A confidence interval gives you a range of values that likely contains the true number of jelly beans in the jar. When someone says they have a 95% confidence interval, it means that if they repeated this process many times, about 95 out of every 100 intervals would contain the true number of jelly beans. It's like saying, \"I'm pretty sure the real number of jelly beans is somewhere between these two numbers.\"",
+    "latency": 52.605,
+    "tokens_generated": 122,
+    "model": "sft-output"
+  },
+  {
+    "id": 44,
+    "category": "Physics",
+    "prompt": "Why does entropy always increase? What is actually happening at a physical level?",
+    "response": "Imagine you have a box of toys. At first, they're all neatly organized in different sections. But over time, without any conscious effort, things start to get messy. Toys fall out of their places, and it becomes harder to find what you need. This is similar to what happens with entropy. Entropy is like a measure of disorder or randomness in a system. In the toy example, as time goes on, the toys become more disordered (less organized), which increases the entropy. At a physical level, this happens because there are many more ways for things to be disordered than ordered. For instance, if you have a room with 10 toys, there are many more ways to scatter them around randomly than to keep them neatly arranged. So, even though nothing is actively making the toys messy, the natural tendency is towards more disorder because there are so many more possible messy arrangements than neat ones.",
+    "latency": 79.886,
+    "tokens_generated": 186,
+    "model": "sft-output"
+  },
+  {
+    "id": 45,
+    "category": "Physics",
+    "prompt": "What is quantum superposition? Is Schrodinger's cat actually a useful way to think about it?",
+    "response": "Imagine you have a coin that can be in two states: heads or tails. In classical physics, if you flip the coin, it will land on one side or the other. But in quantum mechanics, the coin can exist in both states at the same time until you observe it. This is called superposition. It's like the coin is both heads and tails simultaneously until you look at it. Schrödinger's cat is a thought experiment where a cat is put in a sealed box with a mechanism that could release poison. The cat is considered both alive and dead until someone opens the box to check. This illustrates how particles can be in multiple states until observed.",
+    "latency": 58.627,
+    "tokens_generated": 136,
+    "model": "sft-output"
+  },
+  {
+    "id": 46,
+    "category": "Biology",
+    "prompt": "Why do antibiotics work against bacteria but not viruses?",
+    "response": "Antibiotics target bacterial cells because they have different cell structures than human cells. Bacteria have a cell wall made of peptidoglycan, which is essential for their survival. Antibiotics like penicillin interfere with this structure, causing the bacteria to die. Viruses, on the other hand, don't have cell walls or membranes; they're just genetic material surrounded by a protein coat. They can't be killed by antibiotics because they don't have any targets that antibiotics can attack.",
+    "latency": 41.97,
+    "tokens_generated": 102,
+    "model": "sft-output"
+  },
+  {
+    "id": 47,
+    "category": "Physics",
+    "prompt": "Why is the speed of light the universal speed limit? What would happen if something went faster?",
+    "response": "Imagine you're playing a game where everyone has to run at the same speed, like a race. The speed of light is like that top speed for everything in the universe. It's not just because it's fast; it's because it's the fastest possible speed. If something were to go faster than light, it would break the rules of how the universe works. It's like trying to run faster than the speed of sound in water; it just doesn't work that way.",
+    "latency": 42.511,
+    "tokens_generated": 98,
+    "model": "sft-output"
+  },
+  {
+    "id": 48,
+    "category": "Economics",
+    "prompt": "How does compound interest actually work? Why does starting early matter so much?",
+    "response": "Imagine you have a piggy bank where you put in $1 every day. If you just add up all those dollars, you'd have $365 at the end of the year. But with compound interest, it's like magic! You not only earn money on the $1 you put in each day, but also on the money you've already earned. So, if you start with $1 and earn 1% interest daily, by the end of the first day, you have $1.01. On the second day, you earn 1% on $1.01, which is $1.0201. This continues, and by the end of the year, you'd have over $4,000! Starting early matters because the longer you let your money grow, the more it grows. It's like planting a tree; the earlier you plant it, the bigger it will be when it matures.",
+    "latency": 84.003,
+    "tokens_generated": 195,
+    "model": "sft-output"
+  },
+  {
+    "id": 49,
+    "category": "Economics",
+    "prompt": "Why does inflation happen? What is actually causing prices to rise?",
+    "response": "Imagine you have a toy store with lots of toys. One day, you decide to make all the toys more expensive because you want to earn more money. This is like when businesses raise prices because they want to make more profit. Another reason could be that there's a big demand for toys, but not enough toys are being made. So, the price goes up because people want to buy them, but there aren't enough to go around. Inflation can also happen when the government prints too much money, which makes each dollar worth less. It's like if everyone had more money, but there weren't more toys to buy, so the toys become more expensive.",
+    "latency": 56.076,
+    "tokens_generated": 135,
+    "model": "sft-output"
+  },
+  {
+    "id": 50,
+    "category": "Economics",
+    "prompt": "What is opportunity cost? Can you give me a real example from everyday life?",
+    "response": "Imagine you have $100 to spend. You can either buy a new video game or go to the movies with friends. If you choose the video game, you're giving up the experience of going to the movies with friends. The value of that experience is the opportunity cost of buying the video game. In everyday life, if you decide to spend time studying for an exam instead of hanging out with friends, the enjoyment and social interaction you miss out on are the opportunity costs of your decision.",
+    "latency": 43.54,
+    "tokens_generated": 101,
+    "model": "sft-output"
+  }
+]

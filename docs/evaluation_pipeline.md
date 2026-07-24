@@ -326,11 +326,11 @@ Economics
 
 | Metric | Result |
 |---------|-------:|
-| Flesch Reading Ease | **55.29** |
-| Grade Level | **10.22** |
-| Average Word Count | **146.8** |
-| BERTScore | **0.713** |
-| Overall LLM-as-Judge | **4.83 / 5** |
+| Flesch Reading Ease | **45.20** |
+| Grade Level | **11.33** |
+| Average Word Count | **110.58** |
+| BERTScore | **0.724** |
+| Overall LLM-as-Judge | **4.46 / 5** |
 | Formatting Error Rate | **0.0%** |
 | Non-English Ratio | **0.1%** |
 
@@ -340,7 +340,7 @@ The corrected evaluation pipeline demonstrates that the baseline model already p
 
 Key observations include:
 
-- High overall educational quality (**4.83/5**) according to the LLM-as-a-Judge rubric.
+- High overall educational quality (**4.46/5**) according to the LLM-as-a-Judge rubric.
 - Responses consistently include examples and beginner-friendly explanations.
 - Proper chat template formatting eliminated malformed outputs and multilingual artifacts observed during early development.
 - The baseline establishes a reliable reference point for evaluating improvements introduced by SFT and DPO.

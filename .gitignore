@@ -2,6 +2,20 @@
 models/
 .env.example
 
+# ===========================
+# Training Outputs
+# ===========================
+training/logs/
+
+# TensorBoard
+runs/
+tensorboard/
+*.tfevents*
+
+# MLflow
+mlruns/
+
+
 # ------------------------------
 # Python
 # ------------------------------

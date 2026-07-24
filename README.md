@@ -38,7 +38,7 @@ Direct Preference Optimization (DPO) can instead learn:
 - [x] CI pipeline (ruff + pytest)
 - [x] Baseline evaluation
 - [x] Evaluation pipeline validation
-- [ ] Mistral-7B + QLoRA training
+- [x] Qwen-7B SFT training
 - [ ] DPO training
 - [ ] Post-training evaluation
 
@@ -83,6 +83,8 @@ DPO_Clarify_Dataset/
 |
 ├── docs/
 │   ├── dataset_engineering.md
+│   ├── experiments.md
+│   ├── training.md
 │   └── evaluation_pipeline.md
 |
 ├── evaluation/
@@ -93,8 +95,6 @@ DPO_Clarify_Dataset/
 │   └── metrics.py
 │
 ├── results/
-│   ├── base_eval.json
-│   └── base_responses.json
 |
 ├── src/
 │   ├── stack_exchange_pairs.py
@@ -102,6 +102,14 @@ DPO_Clarify_Dataset/
 │   ├── synthetic_pairs.py
 │   ├── save_dataset.py
 │   └── utils.py
+|
+├── training/
+│   ├── __init__.py
+│   ├── adapter_utils.py
+│   ├── inference.py
+│   ├── train_dpo.py
+│   ├── train_sft.py
+│   └── training_config.py
 │ 
 ├── tests/
 │   └── test_pipeline.py
@@ -179,7 +187,7 @@ A pull request must pass all checks before merging.
 
 ## Next Steps
 
-* Train Mistral-7B using QLoRA
+* Train QWEN-7B using QLoRA
 * Run DPO training
 * Evaluate explanation quality
 * Compare against SFT baselines
@@ -200,6 +208,18 @@ Implemented a reproducible evaluation pipeline to benchmark educational explanat
 
 Read more: [Evaluation Methodology](docs/evaluation.md)
 
+## Training Pipeline
+
+Implemented a reproducible post-training pipeline using QLoRA for Supervised Fine-Tuning (SFT), followed by Direct Preference Optimization (DPO). The training workflow includes 4-bit quantization, LoRA adapters, checkpointing, experiment tracking, and reproducible configurations for efficient fine-tuning of large language models.
+
+Read more: [Training Pipeline](docs/training.md)
+
+## Experiments
+
+Documented all major experiments, including baseline evaluation, QLoRA Supervised Fine-Tuning, Direct Preference Optimization, ablation studies, hyperparameter configurations, quantitative results, and engineering observations. Each experiment includes reproducible settings, evaluation metrics, and key findings.
+
+Read more: [Experiments & Results](docs/experiments.md)
+
 ## Experiment Log
 
 | Date | Experiment | Status |
@@ -207,5 +227,5 @@ Read more: [Evaluation Methodology](docs/evaluation.md)
 | 2026-07 | Designed evaluation benchmark (50 prompts) | ✅ |
 | 2026-07 | Implemented response generation pipeline | ✅ |
 | 2026-07 | Baseline evaluation (Qwen2.5-7B-Instruct) | ✅ |
-| 2026-07 | SFT evaluation | ⏳ |
+| 2026-07 | SFT evaluation | ✅ |
 | 2026-07 | DPO evaluation | ⏳ |

@@ -84,11 +84,9 @@ def generate_response(
         {
             "role": "system",
             "content": (
-                """
-                You are a helpful educational AI assistant.
-                Provide a clear, accurate, and beginner-friendly explanation in approximately 120-150 words. 
-                Use simple language and include an example or analogy where appropriate.
-                """
+                "You are an educational AI assistant."
+                "Answer the given question clearly, simply(easy to understand) and accurately."
+                "Limit your response to about 120-150 words."
             ),
         },
         {
