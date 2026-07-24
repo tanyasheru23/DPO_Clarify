@@ -37,7 +37,9 @@ def load_tokenizer(model_path) -> AutoTokenizer:
     )
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.padding_side = "right"  # right-padding for training (left-padding is a generation-time thing)
+    tokenizer.padding_side = (
+        "right"  # right-padding for training (left-padding is a generation-time thing)
+    )
     return tokenizer
 
 

@@ -26,8 +26,10 @@ MODELS_DIR = "./models"
 # ─────────────────────────────────────────────
 # PATHS
 # ─────────────────────────────────────────────
-DATASET_HF_DIR = OUTPUT_HF_DIR                     # data/dataset_hf (train/test splits)
-SFT_MERGED_DIR = Path("models/sft-merged")          # full merged SFT weights (base + SFT adapter)
+DATASET_HF_DIR = OUTPUT_HF_DIR  # data/dataset_hf (train/test splits)
+SFT_MERGED_DIR = Path(
+    "models/sft-merged"
+)  # full merged SFT weights (base + SFT adapter)
 LOGS_DIR = Path("training/logs")
 
 for p in (SFT_MODEL_DIR, DPO_MODEL_DIR, SFT_MERGED_DIR, LOGS_DIR):

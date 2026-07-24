@@ -85,7 +85,11 @@ def main():
     dataset = load_from_disk(str(DATASET_HF_DIR))
     train_dataset = dataset["train"].map(
         lambda ex: build_preference_example(ex, tokenizer),
-        remove_columns=[c for c in dataset["train"].column_names if c not in ("prompt", "chosen", "rejected")],
+        remove_columns=[
+            c
+            for c in dataset["train"].column_names
+            if c not in ("prompt", "chosen", "rejected")
+        ],
     )
 
     dpo_config = DPOConfig(
