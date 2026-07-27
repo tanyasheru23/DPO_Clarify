@@ -115,6 +115,7 @@ DPO_MAX_LENGTH = 1024
 
 DPO_ARGS = dict(
     output_dir=str(LOGS_DIR / "dpo-run"),
+    max_steps=5,
     num_train_epochs=2,
     per_device_train_batch_size=1,
     gradient_accumulation_steps=8,
