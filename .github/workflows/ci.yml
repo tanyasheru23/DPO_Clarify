@@ -2,8 +2,7 @@
 # CI Pipeline — DPOClarify (dataset building stage)
 #
 # Runs on every push and PR:
-#   1. Lint  — ruff checks code style and catches common bugs
-#   2. Test  — pytest runs unit tests for the data pipeline
+#   1. Test  — pytest runs unit tests for the data pipeline
 #
 # ─────────────────────────────────────────────────────────────────────────────
 
