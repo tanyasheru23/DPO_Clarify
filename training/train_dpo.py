@@ -95,7 +95,7 @@ def main():
     dpo_config = DPOConfig(
         **DPO_ARGS,
         beta=DPO_BETA,
-        max_prompt_length=DPO_MAX_PROMPT_LENGTH,
+        # max_prompt_length=DPO_MAX_PROMPT_LENGTH,
         max_length=DPO_MAX_LENGTH,
     )
 
@@ -104,7 +104,7 @@ def main():
         ref_model=None,  # uses the disable-adapter trick -> reference = merged SFT weights
         args=dpo_config,
         train_dataset=train_dataset,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     print("Starting DPO training...")

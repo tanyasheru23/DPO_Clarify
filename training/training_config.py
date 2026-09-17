@@ -18,7 +18,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from config import SFT_MODEL_DIR, DPO_MODEL_DIR, OUTPUT_HF_DIR  # noqa: E402
 
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+# MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
 MODELS_DIR = "./models"
 
