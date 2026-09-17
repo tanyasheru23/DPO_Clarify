@@ -22,11 +22,12 @@ MIN_SCORE_GAP = 3
 MIN_ANSWER_LENGTH = 80
 
 OPENAI_MODEL = "gpt-4o"
-JUDGE_MODEL = "gpt-4o"
+JUDGE_MODEL = "gpt-5o"
 
 # ─────────────────────────────────────────────
 # MODELS
 # ─────────────────────────────────────────────
-BASE_MODEL = Path("models/Qwen2.5-7B-Instruct")
+BASE_MODEL = Path("models/Qwen2.5-3B-Instruct")
+# BASE_MODEL = Path("models/Qwen2.5-7B-Instruct")
 DPO_MODEL_DIR = Path("models/dpo-output")
 SFT_MODEL_DIR = Path("models/sft-output")
