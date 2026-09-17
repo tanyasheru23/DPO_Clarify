@@ -1,7 +1,3 @@
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
-
-MODELS_DIR = "./models"
-
 """
 training_config.py
 ===================
@@ -20,13 +16,20 @@ from pathlib import Path
 # Make root config.py importable when this file is run from training/
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from config import BASE_MODEL, SFT_MODEL_DIR, DPO_MODEL_DIR, OUTPUT_HF_DIR  # noqa: E402
+from config import SFT_MODEL_DIR, DPO_MODEL_DIR, OUTPUT_HF_DIR  # noqa: E402
+
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+
+MODELS_DIR = "./models"
+
 
 # ─────────────────────────────────────────────
 # PATHS
 # ─────────────────────────────────────────────
-DATASET_HF_DIR = OUTPUT_HF_DIR                     # data/dataset_hf (train/test splits)
-SFT_MERGED_DIR = Path("models/sft-merged")          # full merged SFT weights (base + SFT adapter)
+DATASET_HF_DIR = OUTPUT_HF_DIR  # data/dataset_hf (train/test splits)
+SFT_MERGED_DIR = Path(
+    "models/sft-merged"
+)  # full merged SFT weights (base + SFT adapter)
 LOGS_DIR = Path("training/logs")
 
 for p in (SFT_MODEL_DIR, DPO_MODEL_DIR, SFT_MERGED_DIR, LOGS_DIR):
@@ -112,6 +115,7 @@ DPO_MAX_LENGTH = 1024
 
 DPO_ARGS = dict(
     output_dir=str(LOGS_DIR / "dpo-run"),
+    max_steps=5,
     num_train_epochs=2,
     per_device_train_batch_size=1,
     gradient_accumulation_steps=8,

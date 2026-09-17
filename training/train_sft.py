@@ -36,7 +36,8 @@ def check_no_eval_overlap(train_dataset):
     Must run BEFORE build_prompt_completion reformats the 'prompt' column,
     since eval_prompts.json stores raw (non-templated) prompt strings."""
     eval_prompts = {
-        p["prompt"] for p in json.loads(Path(EVAL_PROMPTS_PATH).read_text(encoding="utf-8"))
+        p["prompt"]
+        for p in json.loads(Path(EVAL_PROMPTS_PATH).read_text(encoding="utf-8"))
     }
     train_prompts = set(train_dataset["prompt"])
     overlap = eval_prompts & train_prompts
@@ -90,7 +91,7 @@ def main():
         **SFT_ARGS,
         max_length=MAX_SEQ_LENGTH,
         completion_only_loss=True,  # loss computed on 'completion' only, prompt tokens masked
-        packing=False,              # packing is incompatible with completion-only loss
+        packing=False,  # packing is incompatible with completion-only loss
     )
 
     trainer = SFTTrainer(

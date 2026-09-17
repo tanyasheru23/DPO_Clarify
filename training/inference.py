@@ -39,14 +39,18 @@ def load_for_inference(model_choice: str):
 
     elif model_choice == "sft":
         if not Path(SFT_MODEL_DIR).exists():
-            raise FileNotFoundError(f"No SFT adapter found at {SFT_MODEL_DIR} — run train_sft.py first")
+            raise FileNotFoundError(
+                f"No SFT adapter found at {SFT_MODEL_DIR} — run train_sft.py first"
+            )
         tokenizer = load_tokenizer(BASE_MODEL)
         base = load_quantized_base(BASE_MODEL)
         model = PeftModel.from_pretrained(base, str(SFT_MODEL_DIR))
 
     elif model_choice == "dpo":
         if not Path(DPO_MODEL_DIR).exists():
-            raise FileNotFoundError(f"No DPO adapter found at {DPO_MODEL_DIR} — run train_dpo.py first")
+            raise FileNotFoundError(
+                f"No DPO adapter found at {DPO_MODEL_DIR} — run train_dpo.py first"
+            )
         if not Path(SFT_MERGED_DIR).exists():
             raise FileNotFoundError(
                 f"No merged SFT model found at {SFT_MERGED_DIR} — "
@@ -73,7 +77,9 @@ def generate(model, tokenizer, prompt: str) -> str:
         tokenize=False,
         add_generation_prompt=True,  # note: fixed vs. the typo in evaluation/generate.py
     )
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=1024).to(model.device)
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=1024).to(
+        model.device
+    )
 
     with torch.inference_mode():
         outputs = model.generate(
@@ -84,7 +90,7 @@ def generate(model, tokenizer, prompt: str) -> str:
             eos_token_id=tokenizer.eos_token_id,
         )
 
-    generated_tokens = outputs[0][inputs["input_ids"].shape[1]:]
+    generated_tokens = outputs[0][inputs["input_ids"].shape[1] :]
     return tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
 
 
