@@ -1,6 +1,6 @@
 # DPOClarify
 
-Train a **Mistral-7B** model using **Direct Preference Optimization (DPO)** and **QLoRA** to prefer explanations that improve understanding rather than merely being factually correct.
+Train a **Qwen-2.5** model using **Direct Preference Optimization (DPO)** and **QLoRA** to prefer explanations that improve understanding rather than merely being factually correct.
 
 The dataset consists of question-answer preference pairs where **both answers are correct**, but one explanation is substantially clearer than the other.
 
