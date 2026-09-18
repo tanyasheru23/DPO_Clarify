@@ -35,3 +35,10 @@ env/
 # VS Code
 # ------------------------------
 .vscode/
+
+
+data_cleaning/llm_flagged_review.py
+data_cleaning/manual_review.py
+
+data/manual_reviewed.jsonl
+data/llm_reviewed.jsonl
